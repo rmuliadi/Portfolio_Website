@@ -14,7 +14,7 @@ function Projects() {
             category: 'Full Stack'
         },
         {
-            title: 'Generative AI Web App',
+            title: 'Generative AI Web App with Retrieval Augmented Generation',
             description: 'Real-time weather tracking application',
             technologies: ['Gradio', 'OpenAI', 'Langchain'],
             github: 'https://github.com/rmuliadi/Gen_AI_with_OpenAI_RAG',
