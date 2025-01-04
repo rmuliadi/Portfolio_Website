@@ -7,19 +7,19 @@ function Projects() {
     const projects = [
         {
             title: 'E-Commerce Platform',
-            description: 'Full-stack e-commerce solution with React and Node.js',
+            description: 'Full-stack e-commerce Pharmacy App with React and Node.js',
             technologies: ['React', 'Node.js', 'MongoDB'],
-            github: 'https://github.com/example/ecommerce',
-            live: 'https://example-ecommerce.com',
+            github: 'https://github.com/rmuliadi/TestPharmacy',
+            //live: 'https://example-ecommerce.com',
             category: 'Full Stack'
         },
         {
-            title: 'Weather App',
+            title: 'Generative AI Web App',
             description: 'Real-time weather tracking application',
-            technologies: ['React', 'API Integration'],
-            github: 'https://github.com/example/weather-app',
-            live: 'https://example-weather-app.com',
-            category: 'Frontend'
+            technologies: ['Gradio', 'OpenAI', 'Langchain'],
+            github: 'https://github.com/rmuliadi/Gen_AI_with_OpenAI_RAG',
+            //live: 'https://example-weather-app.com',
+            category: 'Full Stack'
         },
         {
             title: 'Task Management System',
