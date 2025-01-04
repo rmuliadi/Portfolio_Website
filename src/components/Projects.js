@@ -6,9 +6,9 @@ function Projects() {
 
     const projects = [
         {
-            title: 'E-Commerce Platform',
+            title: 'E-Commerce Web App',
             description: 'Full-stack e-commerce Pharmacy App with React and Node.js',
-            technologies: ['React', 'Node.js', 'MongoDB'],
+            technologies: ['React', 'Node.js','Express.js', 'MongoDB'],
             github: 'https://github.com/rmuliadi/TestPharmacy',
             //live: 'https://example-ecommerce.com',
             category: 'Full Stack'
@@ -22,12 +22,12 @@ function Projects() {
             category: 'Full Stack'
         },
         {
-            title: 'Task Management System',
+            title: 'Monorepo Turborepo Firebase Web App with FrontEnd and BackEnd',
             description: 'Collaborative task tracking platform',
-            technologies: ['Node.js', 'Express', 'MongoDB'],
-            github: 'https://github.com/example/task-management',
-            live: 'https://example-tasks.com',
-            category: 'Backend'
+            technologies: ['Next.js', 'Express.js', 'Monorepo'],
+            github: 'https://github.com/rmuliadi/ebuddy_monorepo',
+            //live: 'https://example-tasks.com',
+            category: 'Full Stack'
         }
     ];
 
