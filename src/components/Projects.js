@@ -24,7 +24,7 @@ function Projects() {
         {
             title: 'Monorepo Turborepo Firebase Web App with FrontEnd and BackEnd',
             description: 'Collaborative task tracking platform',
-            technologies: ['Next.js', 'Express.js', 'Monorepo'],
+            technologies: ['React', 'Next.js', 'Express.js', 'Firebase', 'Monorepo', 'Turborepo'],
             github: 'https://github.com/rmuliadi/ebuddy_monorepo',
             //live: 'https://example-tasks.com',
             category: 'Full Stack'
