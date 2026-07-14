@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Ryan Muliadi — Digital Systems Architect dan independent consultant dari Jakarta. Cloud architecture, data engineering, dan AI integration. Build in public: tutorial nyata, arsitektur sistem, dan lessons dari proyek production."/>
+<meta name="keywords" content="Ryan Muliadi, Digital Systems Architect, cloud architecture Indonesia, data engineering, AI integration, independent consultant Jakarta, software architect Indonesia, Next.js, LangChain, Ryzen Digital Systems"/>
+<meta name="author" content="Ryan Muliadi"/>
+<meta name="robots" content="index, follow"/>
+<meta name="language" content="id-ID"/>
+<link rel="canonical" href="https://ryrds.my.id/"/>
+
+<title>Ryan Muliadi — Digital Systems Architect & Independent Consultant | Jakarta</title>
+
+<!-- Open Graph (Facebook, LinkedIn, WhatsApp preview) -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://ryrds.my.id/"/>
+<meta property="og:title" content="Ryan Muliadi — Digital Systems Architect"/>
+<meta property="og:description" content="Cloud architecture, data engineering, dan AI integration. Build in public dari proyek nyata di Indonesia."/>
+<meta property="og:image" content="https://ryrds.my.id/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:site_name" content="Ryan Muliadi"/>
+<meta property="og:locale" content="id_ID"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:url" content="https://ryrds.my.id/"/>
+<meta name="twitter:title" content="Ryan Muliadi — Digital Systems Architect"/>
+<meta name="twitter:description" content="Cloud architecture, data engineering, dan AI integration dari Jakarta. Build in public."/>
+<meta name="twitter:image" content="https://ryrds.my.id/og-image.png"/>
+
+<!-- Structured Data: Person (Google Knowledge Panel) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ryan Muliadi",
+  "url": "https://ryrds.my.id",
+  "image": "https://ryrds.my.id/photo.jpg",
+  "jobTitle": "Digital Systems Architect",
+  "description": "Independent consultant specializing in cloud architecture, data engineering, and AI integration. Founder of Ryzen Digital Systems, based in Jakarta, Indonesia.",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Ryzen Digital Systems",
+    "url": "https://www.rd-systems.com"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Jakarta",
+    "addressCountry": "ID"
+  },
+  "email": "ryan@ryrds.my.id",
+  "sameAs": [
+    "https://linkedin.com/in/ryanmuliadi",
+    "https://github.com/ryanmuliadi",
+    "https://www.rd-systems.com"
+  ],
+  "knowsAbout": [
+    "Cloud Architecture",
+    "Data Engineering",
+    "AI Integration",
+    "Software Architecture",
+    "Next.js",
+    "Node.js",
+    "LangChain",
+    "PostgreSQL"
+  ]
+}
+</script>
+
+<!-- Structured Data: WebSite (enables Google Sitelinks Search) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Ryan Muliadi",
+  "url": "https://ryrds.my.id",
+  "description": "Portfolio dan content hub Ryan Muliadi — Digital Systems Architect dari Jakarta.",
+  "inLanguage": "id-ID",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://ryrds.my.id/blog?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+
+<style>
+:root {
+  /* Palette: warm ivory + ink + teal accent. Intentionally lighter/warmer than rd-systems.com */
+  --cream: #F5F1E8;
+  --cream2: #EDE8DC;
+  --cream3: #E4DDD0;
+  --ink: #141210;
+  --ink2: #2C2820;
+  --ink3: #5A5248;
+  --ink4: #8A8278;
+  --border: rgba(20,18,16,0.1);
+  --border2: rgba(20,18,16,0.18);
+  --teal: #1A9E78;
+  --teal2: #22C492;
+  --teal-pale: rgba(26,158,120,0.08);
+  --gold: #B8920A;
+  --gold2: #D4AA20;
+  --gold-pale: rgba(184,146,10,0.08);
+  --red: #C04030;     /* for "live" indicators */
+
+  --display: 'Bebas Neue', sans-serif;
+  --serif: 'Lora', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Subtle paper texture */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.018;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.z1 { position: relative; z-index: 1; }
+
+/* ── NAVIGATION ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(245,241,232,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 5vw;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.nav-name {
+  font-family: var(--display);
+  font-size: 1.35rem;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.nav-name .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--teal);
+  flex-shrink: 0;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+.nl {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.45rem 0.85rem;
+  color: var(--ink4);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.2s;
+}
+.nl:hover { color: var(--ink); background: var(--border); }
+.nl.cta {
+  background: var(--ink);
+  color: var(--cream);
+  margin-left: 0.4rem;
+}
+.nl.cta:hover {
+  background: var(--ink2);
+  transform: translateY(-1px);
+}
+
+/* ── LAYOUT ── */
+.wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 5vw;
+}
+
+/* ── HERO ── */
+.hero {
+  padding: 4rem 0 0;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+.hero-top {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 3rem;
+  align-items: end;
+  padding-bottom: 3rem;
+}
+.hero-kicker {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--teal);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  opacity: 0;
+  animation: slideUp 0.7s ease 0.1s forwards;
+}
+.hero-kicker::before { content: ''; width: 22px; height: 1px; background: var(--teal); }
+
+.hero-headline {
+  font-family: var(--display);
+  font-size: clamp(3.5rem, 9vw, 8rem);
+  line-height: 0.92;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: slideUp 0.9s ease 0.25s forwards;
+}
+.hero-headline .line2 {
+  color: var(--teal);
+  -webkit-text-stroke: 0px;
+}
+.hero-headline .line3 {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--ink3);
+}
+
+.hero-sub {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: var(--ink3);
+  line-height: 1.75;
+  max-width: 52ch;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: slideUp 0.9s ease 0.4s forwards;
+}
+.hero-sub em { font-style: italic; color: var(--ink2); }
+
+.hero-cta-row {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: slideUp 0.9s ease 0.55s forwards;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.4rem;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.22s;
+  cursor: pointer;
+  border: none;
+}
+.btn-primary {
+  background: var(--ink);
+  color: var(--cream);
+}
+.btn-primary:hover {
+  background: var(--ink2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -6px rgba(20,18,16,0.4);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--border2);
+}
+.btn-outline:hover {
+  border-color: var(--ink);
+  background: rgba(20,18,16,0.04);
+}
+
+/* Hero right — platform pills + stats */
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-bottom: 0.5rem;
+  opacity: 0;
+  animation: fadeIn 1s ease 0.6s forwards;
+}
+
+.platform-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+.platform-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.65rem 0.85rem;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: all 0.2s;
+}
+.platform-pill:hover {
+  border-color: var(--border2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px -6px rgba(20,18,16,0.12);
+}
+.pp-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.pp-info {}
+.pp-name {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 2px;
+}
+.pp-sub {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--ink4);
+  letter-spacing: 0.04em;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.stat {
+  background: white;
+  padding: 0.85rem 0.75rem;
+  text-align: center;
+}
+.stat-num {
+  font-family: var(--display);
+  font-size: 1.4rem;
+  letter-spacing: 0.04em;
+  color: var(--teal);
+  line-height: 1;
+  margin-bottom: 3px;
+}
+.stat-label {
+  font-family: var(--mono);
+  font-size: 8.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink4);
+}
+
+/* Hero ticker */
+.ticker-bar {
+  background: var(--ink);
+  padding: 0.6rem 0;
+  overflow: hidden;
+  position: relative;
+}
+.ticker-inner {
+  display: flex;
+  gap: 0;
+  white-space: nowrap;
+  animation: ticker 30s linear infinite;
+}
+.ticker-item {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245,241,232,0.45);
+  padding: 0 2rem;
+  flex-shrink: 0;
+}
+.ticker-item.highlight { color: var(--teal2); }
+.ticker-sep {
+  color: var(--gold);
+  padding: 0 0.5rem;
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ── CONTENT PILLARS ── */
+.pillars {
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+}
+.section-kicker {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal);
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.6rem;
+}
+.section-kicker::before { content: ''; width: 14px; height: 1px; background: var(--teal); }
+.section-title {
+  font-family: var(--display);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  line-height: 0.95;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+}
+.section-title em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ink3);
+}
+.see-all {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink4);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s;
+  flex-shrink: 0;
+  margin-bottom: 0.5rem;
+}
+.see-all:hover { color: var(--teal); }
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.pillar-card {
+  background: var(--cream);
+  padding: 2rem 1.75rem;
+  transition: background 0.2s;
+  position: relative;
+  cursor: pointer;
+}
+.pillar-card:hover { background: white; }
+.pillar-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--teal);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.pillar-card:hover::after { transform: scaleX(1); }
+
+.pillar-num {
+  font-family: var(--display);
+  font-size: 2.8rem;
+  letter-spacing: 0.05em;
+  color: var(--cream3);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  transition: color 0.2s;
+}
+.pillar-card:hover .pillar-num { color: var(--teal2); }
+.pillar-tag {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink4);
+  margin-bottom: 0.85rem;
+}
+.pillar-title {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.35;
+  margin-bottom: 0.65rem;
+}
+.pillar-desc {
+  font-size: 0.84rem;
+  color: var(--ink3);
+  line-height: 1.75;
+}
+.pillar-examples {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.px {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--ink4);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  line-height: 1.45;
+}
+.px::before { content: '→'; color: var(--teal); flex-shrink: 0; }
+
+/* ── LATEST CONTENT ── */
+.latest {
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+/* Featured post — large */
+.post-featured {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+.post-featured:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -16px rgba(20,18,16,0.15);
+  border-color: var(--border2);
+}
+.pf-thumbnail {
+  height: 220px;
+  background: linear-gradient(135deg, var(--ink2) 0%, #1A2830 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.pf-thumbnail::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 60% at 30% 50%, rgba(26,158,120,0.15) 0%, transparent 70%);
+}
+.pf-thumb-label {
+  font-family: var(--display);
+  font-size: 5.5rem;
+  letter-spacing: 0.04em;
+  color: rgba(245,241,232,0.06);
+  position: absolute;
+  bottom: -10px;
+  right: 16px;
+  line-height: 1;
+}
+.pf-platform {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.65rem;
+  border-radius: 3px;
+  border: 1px solid rgba(245,241,232,0.2);
+  color: rgba(245,241,232,0.7);
+  backdrop-filter: blur(8px);
+}
+.pf-body { padding: 1.75rem; flex: 1; display: flex; flex-direction: column; }
+.pf-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+.pf-pillar {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  background: var(--teal-pale);
+  padding: 0.2rem 0.55rem;
+  border-radius: 3px;
+}
+.pf-date {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--ink4);
+  letter-spacing: 0.04em;
+}
+.pf-title {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+}
+.pf-excerpt {
+  font-size: 0.88rem;
+  color: var(--ink3);
+  line-height: 1.75;
+  flex: 1;
+}
+.pf-footer {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pf-read {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.pf-time {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--ink4);
+}
+
+/* Post list — right column */
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.post-item {
+  background: var(--cream);
+  padding: 1.25rem 1.4rem;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+.post-item:hover { background: white; }
+.pi-platform {
+  font-family: var(--mono);
+  font-size: 8.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink4);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.pi-platform::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--teal);
+}
+.pi-platform.yt::before { background: #FF0000; }
+.pi-platform.li::before { background: #0A66C2; }
+.pi-platform.tt::before { background: #010101; }
+.pi-title {
+  font-family: var(--serif);
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink);
+}
+.pi-meta {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--ink4);
+  letter-spacing: 0.04em;
+}
+
+/* ── ABOUT ── */
+.about {
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.about-text {}
+.about-quote {
+  font-family: var(--serif);
+  font-size: clamp(1.3rem, 2.8vw, 1.8rem);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--teal);
+}
+.about-quote em { color: var(--teal); }
+.about-body {
+  font-size: 0.95rem;
+  color: var(--ink3);
+  line-height: 1.85;
+  margin-bottom: 1rem;
+}
+.about-body strong { color: var(--ink); font-weight: 600; }
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+.about-tag {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.8rem;
+  border: 1.5px solid var(--border2);
+  border-radius: 4px;
+  color: var(--ink3);
+  transition: all 0.2s;
+  cursor: default;
+}
+.about-tag:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+  background: var(--teal-pale);
+}
+
+.about-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.about-card-top {
+  background: var(--ink);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+.avatar-ring {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal-pale), rgba(184,146,10,0.1));
+  border: 2.5px solid rgba(245,241,232,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.avatar-initials {
+  font-family: var(--display);
+  font-size: 1.8rem;
+  letter-spacing: 0.05em;
+  color: var(--teal2);
+}
+.ac-name {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  color: var(--cream);
+}
+.ac-role {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245,241,232,0.45);
+}
+.about-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.acb-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--ink3);
+}
+.acb-row:last-child { border-bottom: none; }
+.acb-k {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink4);
+  width: 64px;
+  flex-shrink: 0;
+}
+.acb-v { color: var(--ink); font-weight: 500; font-size: 0.88rem; }
+
+/* ── NEWSLETTER / CTA ── */
+.cta-bar {
+  background: var(--ink);
+  padding: 4rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.cta-bar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 0% 50%, rgba(26,158,120,0.1) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 70% at 100% 50%, rgba(184,146,10,0.06) 0%, transparent 55%);
+}
+.cta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.cta-title {
+  font-family: var(--display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  letter-spacing: 0.04em;
+  line-height: 0.95;
+  color: var(--cream);
+  margin-bottom: 1rem;
+}
+.cta-title .accent { color: var(--teal2); }
+.cta-sub {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: rgba(245,241,232,0.55);
+  line-height: 1.65;
+}
+.cta-form-area {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.cta-form {
+  display: flex;
+  gap: 0.5rem;
+  background: rgba(245,241,232,0.08);
+  border: 1px solid rgba(245,241,232,0.15);
+  border-radius: 8px;
+  padding: 0.35rem 0.35rem 0.35rem 1rem;
+}
+.cta-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  color: var(--cream);
+}
+.cta-input::placeholder { color: rgba(245,241,232,0.35); }
+.cta-btn {
+  background: var(--teal);
+  color: var(--ink);
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.25rem;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.cta-btn:hover { background: var(--teal2); }
+.cta-note {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: rgba(245,241,232,0.3);
+  letter-spacing: 0.05em;
+}
+.cta-platforms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.cp-badge {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.85rem;
+  border-radius: 4px;
+  border: 1px solid rgba(245,241,232,0.18);
+  color: rgba(245,241,232,0.55);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.cp-badge:hover {
+  border-color: var(--teal2);
+  color: var(--teal2);
+}
+
+/* ── FOOTER ── */
+footer {
+  padding: 4rem 0 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+.footer-inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.footer-brand {}
+.footer-logo {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  margin-bottom: 0.85rem;
+}
+.footer-logo span { color: var(--teal); }
+.footer-tagline {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--ink4);
+  line-height: 1.55;
+  max-width: 36ch;
+  margin-bottom: 1.25rem;
+}
+.footer-domains {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.fd {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.fd-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+.fd a { color: var(--ink3); text-decoration: none; }
+.fd a:hover { color: var(--teal); }
+.footer-col h4 {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink4);
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.footer-col a {
+  font-size: 0.87rem;
+  color: var(--ink3);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--ink); }
+.footer-bottom {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-bottom p {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--ink4);
+}
+.footer-bottom a { color: var(--ink4); text-decoration: none; }
+.footer-bottom a:hover { color: var(--teal); }
+
+/* ── SITE STRUCTURE SECTION ── */
+.structure {
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.tree {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--ink3);
+  line-height: 2.1;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.75rem 2rem;
+}
+.tree .url { color: var(--teal); }
+.tree .route { color: var(--ink); }
+.tree .note { color: var(--ink4); font-style: italic; }
+.tree .l1 { color: var(--ink); font-weight: 500; }
+.tree .l2 { padding-left: 1.6rem; }
+.tree .l3 { padding-left: 3.2rem; }
+
+/* Domain comparison */
+.domain-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.domain-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.75rem;
+  position: relative;
+}
+.dc-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+.dc-badge {
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.dc-badge.personal { background: var(--teal-pale); color: var(--teal); border: 1px solid rgba(26,158,120,0.2); }
+.dc-badge.commercial { background: var(--gold-pale); color: var(--gold); border: 1px solid rgba(184,146,10,0.2); }
+.dc-domain { font-family: var(--mono); font-size: 1rem; font-weight: 500; color: var(--ink); letter-spacing: 0.02em; }
+.dc-desc { font-size: 0.85rem; color: var(--ink3); line-height: 1.7; margin-bottom: 1.1rem; }
+.dc-list { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
+.dc-list li {
+  font-size: 0.82rem;
+  color: var(--ink3);
+  padding-left: 1rem;
+  position: relative;
+  line-height: 1.5;
+}
+.dc-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--teal);
+  font-size: 0.75rem;
+}
+.domain-card.commercial .dc-list li::before { color: var(--gold); }
+
+/* ── KEYFRAMES ── */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .hero-top { grid-template-columns: 1fr; }
+  .hero-right { flex-direction: row; flex-wrap: wrap; }
+  .pillars-grid { grid-template-columns: 1fr 1fr; }
+  .content-grid { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .cta-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .domain-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .pillars-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .platform-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═════════ NAV ═════════ -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-name" href="#hero">
+      <span class="dot"></span>
+      RYAN MULIADI
+    </a>
+    <div class="nav-links">
+      <a class="nl" href="#content">Konten</a>
+      <a class="nl" href="#pillars">Topik</a>
+      <a class="nl" href="#about">Tentang</a>
+      <a class="nl" href="#structure">Roadmap</a>
+      <a class="nl cta" href="https://www.rd-systems.com">rd-systems.com ↗</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═════════ HERO ═════════ -->
+<div class="z1">
+  <section class="hero" id="hero">
+    <div class="wrap">
+      <div class="hero-top">
+        <div>
+          <div class="hero-kicker">ryrds.my.id · Personal Portfolio</div>
+          <h1 class="hero-headline">
+            BUILD.<br/>
+            <span class="line2">SHIP.</span><br/>
+            <span class="line3">DOCUMENT.</span>
+          </h1>
+          <p class="hero-sub">
+            Saya <em>Ryan Muliadi</em> — Digital Systems Architect &amp; independent consultant dari Jakarta.
+            Di sini saya dokumentasikan cara membangun, arsitektur yang saya pakai,
+            dan pelajaran dari proyek nyata. <em>Build in public, bukan teori.</em>
+          </p>
+          <div class="hero-cta-row">
+            <a class="btn btn-primary" href="#content">Baca Konten Terbaru →</a>
+            <a class="btn btn-outline" href="#pillars">Lihat Topik</a>
+          </div>
+        </div>
+
+        <!-- Right: platforms + stats -->
+        <div class="hero-right">
+          <div>
+            <div style="font-family:var(--mono);font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink4);margin-bottom:0.65rem;">Platform Aktif</div>
+            <div class="platform-grid">
+              <a class="platform-pill" href="#" target="_blank" rel="noopener">
+                <div class="pp-icon" style="background:#E8F0FE;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="#0A66C2"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.27c-.97 0-1.75-.79-1.75-1.76s.78-1.76 1.75-1.76 1.75.79 1.75 1.76-.78 1.76-1.75 1.76zm13.5 12.27h-3v-5.6c0-3.37-4-3.11-4 0v5.6h-3v-11h3v1.77c1.4-2.59 7-2.78 7 2.48v6.75z"/></svg>
+                </div>
+                <div class="pp-info">
+                  <div class="pp-name">LinkedIn</div>
+                  <div class="pp-sub">Articles & Insights</div>
+                </div>
+              </a>
+              <a class="platform-pill" href="#" target="_blank" rel="noopener">
+                <div class="pp-icon" style="background:#FEE8E8;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </div>
+                <div class="pp-info">
+                  <div class="pp-name">YouTube</div>
+                  <div class="pp-sub">Tutorials & Walkthroughs</div>
+                </div>
+              </a>
+              <a class="platform-pill" href="#" target="_blank" rel="noopener">
+                <div class="pp-icon" style="background:#F0F0F0;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="#000"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.17 1.32.65 2.5 1.4 3.43.4.55.94.95 1.51 1.28v3.53c-.83.09-1.6-.06-2.33-.39-.7-.32-1.34-.77-1.9-1.31-.01 2.75.01 5.5-.01 8.25a8.01 8.01 0 01-1.34 4.22 7.93 7.93 0 01-5.48 3.22 7.97 7.97 0 01-4.48-.91 7.98 7.98 0 01-3.95-6.25c-.01-.44-.01-.88 0-1.32a8.02 8.02 0 016.65-6.97c.03 1.36-.03 2.72-.05 4.08a4.13 4.13 0 00-2.63 1.62 4.2 4.2 0 00-.56 3.23 4.13 4.13 0 001.88 2.47 4.05 4.05 0 002.1.54c.7-.03 1.39-.22 2-.56a4.13 4.13 0 002.08-3.59c.01-6.08.01-12.17.01-18.25z"/></svg>
+                </div>
+                <div class="pp-info">
+                  <div class="pp-name">TikTok</div>
+                  <div class="pp-sub">Short Tips & Demos</div>
+                </div>
+              </a>
+              <a class="platform-pill" href="https://github.com" target="_blank" rel="noopener">
+                <div class="pp-icon" style="background:#F0F0F0;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="#1A1A1A"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </div>
+                <div class="pp-info">
+                  <div class="pp-name">GitHub</div>
+                  <div class="pp-sub">Open Source</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="stats-row">
+            <div class="stat">
+              <div class="stat-num">6</div>
+              <div class="stat-label">Content Pillars</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">6+</div>
+              <div class="stat-label">Live Projects</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">3×</div>
+              <div class="stat-label">Post / Week</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ticker bar -->
+    <div class="ticker-bar">
+      <div class="ticker-inner">
+        <!-- Repeat twice for infinite loop -->
+        <span class="ticker-item">Build in Public</span>
+        <span class="ticker-sep">·</span>
+        <span class="ticker-item highlight">Cloud Architecture</span>
+        <span class="ticker-sep">·</span>
+        <span class="ticker-item">Data Engineering</span>
+        <span class="ticker-sep">·</span>
+        <span class="ticker-item highlight">AI Integration</span>
+        <span class="ticker-sep">·</span>
+        <span class="ticker-item">Agentic Systems</span>
+        <span class="ticker-sep">·</span>
+        <span class="ticker-item highlight">Indonesia Tech</span>
+        <span class="ticker-sep">·</span>
+        <span class="ticker-item">Independent Consultant</span>
+        <span class="ticker-sep">·</span>
+        <span class="ticker-item highlight">Real Projects</span>
+        <span class="ticker-sep">·</span>
+        <span class="ticker-item">Architecture Deep-Dive</span>
+        <span class="ticker-sep">·</span>
+        <span class="ticker-item highlight">LangChain · LangGraph</span>
+        <span class="ticker-sep">·</span>
+        <span class="ticker-item">Consultant Perspective</span>
+        <span class="ticker-sep">·</span>
+        <!-- DUPLICATE for seamless loop -->
+        <span class="ticker-item">Build in Public</span>
+        <span class="ticker-sep">·</span>
+        <span class="ticker-item highlight">Cloud Architecture</span>
+        <span class="ticker-sep">·</span>
+        <span class="ticker-item">Data Engineering</span>
+        <span class="ticker-sep">·</span>
+        <span class="ticker-item highlight">AI Integration</span>
+        <span class="ticker-sep">·</span>
+        <span class="ticker-item">Agentic Systems</span>
+        <span class="ticker-sep">·</span>
+        <span class="ticker-item highlight">Indonesia Tech</span>
+        <span class="ticker-sep">·</span>
+        <span class="ticker-item">Independent Consultant</span>
+        <span class="ticker-sep">·</span>
+        <span class="ticker-item highlight">Real Projects</span>
+        <span class="ticker-sep">·</span>
+        <span class="ticker-item">Architecture Deep-Dive</span>
+        <span class="ticker-sep">·</span>
+        <span class="ticker-item highlight">LangChain · LangGraph</span>
+        <span class="ticker-sep">·</span>
+        <span class="ticker-item">Consultant Perspective</span>
+        <span class="ticker-sep">·</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════ CONTENT PILLARS ═════════ -->
+  <section class="pillars" id="pillars">
+    <div class="wrap">
+      <div class="section-header">
+        <div>
+          <div class="section-kicker">Topik Utama</div>
+          <h2 class="section-title">6 Content <em>Pillars</em></h2>
+        </div>
+        <a class="see-all" href="#content">Semua konten →</a>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-num">01</div>
+          <div class="pillar-tag">Build in Public</div>
+          <h3 class="pillar-title">Dokumentasi Proyek Nyata</h3>
+          <p class="pillar-desc">Proses membangun dari nol — keputusan arsitektur, bug yang sulit, dan apa yang berhasil. Bukan retrospektif, tapi real-time.</p>
+          <div class="pillar-examples">
+            <div class="px">Membangun ConstructPro: Dari monolith ke Turborepo monorepo</div>
+            <div class="px">AI Trading Bot: Minggu 1 — Setup Alpaca + circuit breaker logic</div>
+            <div class="px">GiziKu: Kenapa saya pilih 7 microservices, bukan monolith</div>
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-num">02</div>
+          <div class="pillar-tag">Tutorial Real Problems</div>
+          <h3 class="pillar-title">Fix dari Bug & Problem Nyata</h3>
+          <p class="pillar-desc">Tutorial yang lahir dari masalah yang benar-benar terjadi di production — bukan dari "hello world" yang dibuat-buat.</p>
+          <div class="pillar-examples">
+            <div class="px">Cara fix React error #321 di Next.js 14 App Router + Zustand</div>
+            <div class="px">Netlify _headers CSP parsing error: komentar yang merusak build</div>
+            <div class="px">Railway deployment: health endpoint yang benar untuk Express</div>
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-num">03</div>
+          <div class="pillar-tag">Architecture Deep-Dive</div>
+          <h3 class="pillar-title">Arsitektur Sistem dari Proyek Aktif</h3>
+          <p class="pillar-desc">Diagram, trade-off, dan alasan di balik setiap keputusan arsitektur. Untuk developer yang ingin berpikir seperti arsitek.</p>
+          <div class="pillar-examples">
+            <div class="px">Multi-tenant architecture di PostgreSQL: 3 pendekatan dan trade-off</div>
+            <div class="px">Event-driven vs request-reply: kapan harus pakai mana</div>
+            <div class="px">Cloudflare Workers sebagai API gateway: limits yang perlu diketahui</div>
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-num">04</div>
+          <div class="pillar-tag">Indonesia-Specific</div>
+          <h3 class="pillar-title">Tech di Konteks Indonesia</h3>
+          <p class="pillar-desc">Integrasi payment gateway lokal, cloud cost di market IDR, dan nuansa deploy untuk user Indonesia yang tidak ada di dokumentasi resmi.</p>
+          <div class="pillar-examples">
+            <div class="px">Integrasi Midtrans Snap di React: pitfalls yang tidak ada di docs</div>
+            <div class="px">Railway vs Vercel vs Koyeb: biaya nyata untuk startup Indonesia</div>
+            <div class="px">WhatsApp Business API vs Fonnte: trade-off untuk skala UKM</div>
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-num">05</div>
+          <div class="pillar-tag">AI & Agentic Systems</div>
+          <h3 class="pillar-title">LLM, RAG, dan Agentic Workflow</h3>
+          <p class="pillar-desc">Praktik nyata mengintegrasikan Claude, OpenAI, dan LangChain ke production — bukan AI demo, tapi sistem yang benar-benar dipakai.</p>
+          <div class="pillar-examples">
+            <div class="px">RAG pipeline untuk customer support: dari zero ke 65% deflection rate</div>
+            <div class="px">LangGraph agentic workflow: state management yang sering salah</div>
+            <div class="px">Gemini Vision untuk analisis damage foto properti di PT JRP</div>
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-num">06</div>
+          <div class="pillar-tag">Consultant Perspective</div>
+          <h3 class="pillar-title">Sisi Bisnis dari Konsultansi Digital</h3>
+          <p class="pillar-desc">Bagaimana menjalankan solo consultancy, pricing engagement, scope proyek, dan membangun reputasi tanpa ads atau network besar.</p>
+          <div class="pillar-examples">
+            <div class="px">Dari karyawan ke independent consultant: 6 hal yang tidak saya antisipasi</div>
+            <div class="px">Cara saya pricing engagement: bukan per jam, tapi per impact</div>
+            <div class="px">Red flags klien yang saya pelajari dengan cara yang mahal</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════ LATEST CONTENT ═════════ -->
+  <section class="latest" id="content">
+    <div class="wrap">
+      <div class="section-header">
+        <div>
+          <div class="section-kicker">Konten Terbaru</div>
+          <h2 class="section-title">Yang Baru <em>Dipublikasikan</em></h2>
+        </div>
+        <a class="see-all" href="#">Semua artikel →</a>
+      </div>
+
+      <div class="content-grid">
+        <!-- Featured post -->
+        <a class="post-featured" href="#">
+          <div class="pf-thumbnail">
+            <div class="pf-thumb-label">ARCH</div>
+            <div class="pf-platform">LinkedIn · Article</div>
+          </div>
+          <div class="pf-body">
+            <div class="pf-meta">
+              <span class="pf-pillar">Architecture Deep-Dive</span>
+              <span class="pf-date">Terbaru · Mei 2025</span>
+            </div>
+            <h3 class="pf-title">Microservices Bukan Tentang Teknologi — Ini Tentang Conway's Law</h3>
+            <p class="pf-excerpt">Setelah membangun 7 microservices untuk GiziKu dan mengadvice beberapa klien untuk migrate dari monolith, saya sampai pada satu kesimpulan: mayoritas migrasi microservices yang gagal bukan karena masalah teknis. Ini tentang structure mismatch antara arsitektur dan tim yang akan maintain-nya...</p>
+            <div class="pf-footer">
+              <span class="pf-read">Baca artikel →</span>
+              <span class="pf-time">8 min read</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Post list -->
+        <div class="post-list">
+          <a class="post-item" href="#">
+            <div class="pi-platform yt">YouTube · Tutorial</div>
+            <div class="pi-title">Cara Fix React Error #321 di Next.js 14 App Router + Zustand</div>
+            <div class="pi-meta">Build in Public · 12 min · Tutorial</div>
+          </a>
+          <a class="post-item" href="#">
+            <div class="pi-platform li">LinkedIn · Post</div>
+            <div class="pi-title">3 Red Flags Klien yang Saya Pelajari dengan Cara yang Mahal</div>
+            <div class="pi-meta">Consultant Perspective · 4 min read</div>
+          </a>
+          <a class="post-item" href="#">
+            <div class="pi-platform yt">YouTube · Deep-Dive</div>
+            <div class="pi-title">RAG Pipeline dari Zero: Dari PDF ke Q&amp;A Bot Production-Ready</div>
+            <div class="pi-meta">AI & Agentic Systems · 28 min</div>
+          </a>
+          <a class="post-item" href="#">
+            <div class="pi-platform li">LinkedIn · Article</div>
+            <div class="pi-title">Integrasi Midtrans Snap di React: 5 Pitfalls yang Tidak Ada di Docs</div>
+            <div class="pi-meta">Indonesia-Specific · 6 min read</div>
+          </a>
+          <a class="post-item" href="#">
+            <div class="pi-platform tt">TikTok · Short</div>
+            <div class="pi-title">Railway vs Vercel: Mana yang Lebih Murah untuk Startup Indonesia?</div>
+            <div class="pi-meta">Indonesia-Specific · 2 min</div>
+          </a>
+          <a class="post-item" href="#" style="border-bottom:none;">
+            <div class="pi-platform li">LinkedIn · Post</div>
+            <div class="pi-title">Kenapa Saya Tidak Pricing Per Jam sebagai Independent Consultant</div>
+            <div class="pi-meta">Consultant Perspective · 3 min read</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════ ABOUT ═════════ -->
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="section-kicker">Tentang Ryan</div>
+      <div class="about-grid">
+        <div class="about-text">
+          <h2 class="about-quote">
+            "Saya build untuk <em>belajar</em>, dan saya dokumentasikan supaya orang lain tidak harus belajar dari kesalahan yang sama."
+          </h2>
+          <p class="about-body">
+            Saya <strong>Ryan Muliadi</strong>, fullstack developer dan digital systems architect yang berbasis di Jakarta. Setelah bertahun-tahun membangun sistem untuk klien di berbagai industri — FinTech, healthcare, konstruksi, EdTech — saya mulai sadar bahwa pelajaran terbesar selalu tersembunyi di antara baris kode yang tidak pernah masuk ke dokumentasi resmi.
+          </p>
+          <p class="about-body">
+            Website ini adalah tempat saya mendokumentasikan semuanya: arsitektur yang bekerja, bug yang hampir membuat saya gila, keputusan bisnis yang terbukti salah, dan sistem yang akhirnya mengubah cara klien bekerja. <strong>Build in public, bukan setelah semuanya sempurna.</strong>
+          </p>
+          <p class="about-body">
+            Di luar konten di sini, saya menjalankan <strong>Ryzen Digital Systems</strong> — konsultansi independen untuk arsitektur cloud, data engineering, dan AI integration.
+          </p>
+          <div class="about-tags">
+            <span class="about-tag">Cloud Architecture</span>
+            <span class="about-tag">Data Engineering</span>
+            <span class="about-tag">AI Integration</span>
+            <span class="about-tag">Next.js</span>
+            <span class="about-tag">Node.js</span>
+            <span class="about-tag">PostgreSQL</span>
+            <span class="about-tag">LangChain</span>
+            <span class="about-tag">Independent Consultant</span>
+          </div>
+        </div>
+
+        <div class="about-card">
+          <div class="about-card-top">
+            <div class="avatar-ring">
+              <div class="avatar-initials">RM</div>
+            </div>
+            <div>
+              <div class="ac-name">RYAN MULIADI</div>
+              <div class="ac-role">Digital Systems Architect</div>
+            </div>
+          </div>
+          <div class="about-card-body">
+            <div class="acb-row">
+              <span class="acb-k">Based</span>
+              <span class="acb-v">Jakarta, Indonesia</span>
+            </div>
+            <div class="acb-row">
+              <span class="acb-k">Domain</span>
+              <span class="acb-v">Cloud · Data · AI</span>
+            </div>
+            <div class="acb-row">
+              <span class="acb-k">Verticals</span>
+              <span class="acb-v">FinTech · Health · ConTech</span>
+            </div>
+            <div class="acb-row">
+              <span class="acb-k">Company</span>
+              <span class="acb-v" style="color:var(--teal);">Ryzen Digital Systems</span>
+            </div>
+            <div class="acb-row">
+              <span class="acb-k">Contact</span>
+              <span class="acb-v" style="font-family:var(--mono);font-size:0.8rem;">ryan@rd-systems.com</span>
+            </div>
+            <div class="acb-row" style="border-bottom:none;">
+              <span class="acb-k">Site</span>
+              <span class="acb-v" style="font-family:var(--mono);font-size:0.8rem;color:var(--gold);">ryrds.my.id</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════ DOMAIN STRUCTURE ═════════ -->
+  <section class="structure" id="structure">
+    <div class="wrap">
+      <div class="section-kicker">Struktur Digital Presence</div>
+      <h2 class="section-title" style="margin-bottom:0.5rem;">Dua Domain, <em>Satu Ekosistem</em></h2>
+      <p style="font-size:0.92rem;color:var(--ink3);line-height:1.75;max-width:60ch;margin-bottom:2.5rem;">
+        Personal portfolio dan commercial arm yang saling mendukung — tapi dengan tujuan dan audience yang berbeda. Dibangun untuk tumbuh secara independen, tapi terhubung satu sama lain.
+      </p>
+
+      <div class="domain-grid">
+        <div class="domain-card">
+          <div class="dc-header">
+            <span class="dc-badge personal">Personal</span>
+            <div>
+              <div class="dc-domain">ryrds.my.id</div>
+              <div style="font-family:var(--mono);font-size:9px;color:var(--ink4);margin-top:2px;letter-spacing:0.04em;">Portfolio · Content Hub · Blog</div>
+            </div>
+          </div>
+          <p class="dc-desc">Ryan Muliadi sebagai orang — tidak sebagai perusahaan. Tone lebih personal, warm, dan editorial. Tempat semua konten creator-led berkumpul: artikel, tutorial, video, dan refleksi.</p>
+          <ul class="dc-list">
+            <li>Homepage: bio, content pillars, konten terbaru dari semua platform</li>
+            <li>Blog / Articles: LinkedIn articles yang di-repurpose + original posts</li>
+            <li>Videos: YouTube embeds + show notes + resources</li>
+            <li>Projects: showcase proyek personal dan open source</li>
+            <li>Newsletter: weekly digest untuk subscribers</li>
+            <li>About: founder story yang lebih personal dari rd-systems.com</li>
+          </ul>
+        </div>
+
+        <div class="domain-card commercial">
+          <div class="dc-header">
+            <span class="dc-badge commercial">Commercial</span>
+            <div>
+              <div class="dc-domain">ryrds.my.id</div>
+              <div style="font-family:var(--mono);font-size:9px;color:var(--ink4);margin-top:2px;letter-spacing:0.04em;">Ryzen Digital Systems · Digital Products</div>
+            </div>
+          </div>
+          <p class="dc-desc">Commercial extension dari Ryzen Digital Systems. Conversion-focused, produk digital dan jasa consultancy yang bisa dibeli atau di-hire langsung. Phase 2 setelah audience terbentuk.</p>
+          <ul class="dc-list">
+            <li>Architecture templates &amp; blueprints (digital downloads)</li>
+            <li>Udemy-style courses dari konten YouTube yang paling populer</li>
+            <li>1:1 coaching sessions (booking via Calendly)</li>
+            <li>Code review service untuk startup Indonesia</li>
+            <li>System design consultation packages</li>
+            <li>Community membership (Discord) — fase lanjutan</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Site tree ryrds.my.id -->
+      <div style="margin-bottom:0.65rem;font-family:var(--mono);font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink4);">
+        Site Map · ryrds.my.id
+      </div>
+      <div class="tree">
+<span class="url">https://ryrds.my.id</span>
+<span class="l1">├─ /</span>                        <span class="note">— Hero, pillars, featured content, about snippet</span>
+<span class="l2">├─ /blog</span>                   <span class="note">— Semua artikel, filter per pillar</span>
+<span class="l3">├─ /blog/[slug]</span>            <span class="note">— Individual article page</span>
+<span class="l3">├─ /blog/architecture</span>      <span class="note">— Filter: Architecture Deep-Dive</span>
+<span class="l3">├─ /blog/build-in-public</span>   <span class="note">— Filter: Build in Public</span>
+<span class="l3">├─ /blog/indonesia-tech</span>    <span class="note">— Filter: Indonesia-Specific</span>
+<span class="l2">├─ /videos</span>                 <span class="note">— YouTube gallery + embeds + show notes</span>
+<span class="l3">├─ /videos/tutorials</span>       <span class="note">— Tutorial series</span>
+<span class="l3">├─ /videos/[slug]</span>          <span class="note">— Video detail + transcript + resources</span>
+<span class="l2">├─ /projects</span>               <span class="note">— Portfolio proyek: ConstructPro, GiziKu, etc.</span>
+<span class="l3">├─ /projects/[slug]</span>        <span class="note">— Project case study: problem → architecture → outcome</span>
+<span class="l2">├─ /about</span>                  <span class="note">— Full founder story, experience, values</span>
+<span class="l2">├─ /newsletter</span>             <span class="note">— Newsletter subscribe + archive</span>
+<span class="l2">└─ /uses</span>                   <span class="note">— Tech stack, tools, setup saya (popular page)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════ CTA / NEWSLETTER ═════════ -->
+  <section class="cta-bar">
+    <div class="wrap">
+      <div class="cta-grid">
+        <div>
+          <h2 class="cta-title">
+            IKUTI<br/>
+            <span class="accent">PERJALANAN</span><br/>
+            INI.
+          </h2>
+          <p class="cta-sub">Newsletter mingguan — konten terbaru, lessons dari project yang sedang berjalan, dan satu insight teknis yang actionable. Tidak ada spam, tidak ada sales pitch.</p>
+        </div>
+        <div class="cta-form-area">
+          <div class="cta-form">
+            <input class="cta-input" type="email" placeholder="email@kamu.com" autocomplete="off"/>
+            <button class="cta-btn">Subscribe →</button>
+          </div>
+          <div class="cta-note">Gratis selamanya · Bisa unsubscribe kapan saja · Tidak ada spam</div>
+          <div>
+            <div style="font-family:var(--mono);font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(245,241,232,0.3);margin-bottom:0.65rem;">Atau follow di:</div>
+            <div class="cta-platforms">
+              <a class="cp-badge" href="#">LinkedIn</a>
+              <a class="cp-badge" href="#">YouTube</a>
+              <a class="cp-badge" href="#">TikTok</a>
+              <a class="cp-badge" href="#">Instagram</a>
+              <a class="cp-badge" href="#">GitHub</a>
+              <a class="cp-badge" href="#">Discord</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════ FOOTER ═════════ -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo">RYAN <span>MULIADI</span></div>
+          <p class="footer-tagline">Digital Systems Architect &amp; independent consultant yang mendokumentasikan cara membangun sistem dari proyek nyata.</p>
+          <div class="footer-domains">
+            <div class="fd"><span class="fd-dot" style="background:var(--teal);"></span><span style="color:var(--ink4);font-family:var(--mono);font-size:9.5px;letter-spacing:0.06em;">Personal:</span> <a href="https://ryrds.my.id">ryrds.my.id</a></div>
+            <div class="fd"><span class="fd-dot" style="background:var(--gold);"></span><span style="color:var(--ink4);font-family:var(--mono);font-size:9.5px;letter-spacing:0.06em;">Commercial:</span> <a href="https://ryrds.my.id">ryrds.my.id</a></div>
+            <div class="fd"><span class="fd-dot" style="background:var(--ink3);"></span><span style="color:var(--ink4);font-family:var(--mono);font-size:9.5px;letter-spacing:0.06em;">Consulting:</span> <a href="https://www.rd-systems.com">rd-systems.com</a></div>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Konten</h4>
+          <ul>
+            <li><a href="#">Blog & Articles</a></li>
+            <li><a href="#">Videos & Tutorials</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Newsletter</a></li>
+            <li><a href="#">Uses / Stack</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">YouTube</a></li>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">TikTok</a></li>
+            <li><a href="mailto:ryan@rd-systems.com">ryan@rd-systems.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Ryan Muliadi · <a href="https://www.rd-systems.com">Ryzen Digital Systems</a></p>
+        <p>Built and shipped from Jakarta, Indonesia 🇮🇩</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>

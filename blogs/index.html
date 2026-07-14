@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Artikel, tutorial, dan arsitektur deep-dive dari Ryan Muliadi — Digital Systems Architect Jakarta. Build in public, Indonesia tech stack, AI integration, dan consultant perspective."/>
+<meta name="keywords" content="Ryan Muliadi blog, digital systems architect Indonesia, tutorial Next.js bahasa Indonesia, cloud architecture Indonesia, AI integration tutorial"/>
+<meta name="author" content="Ryan Muliadi"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://ryrds.my.id/blog"/>
+<title>Blog — Ryan Muliadi | Arsitektur, Tutorial & Build in Public</title>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://ryrds.my.id/blog"/>
+<meta property="og:title" content="Blog — Ryan Muliadi"/>
+<meta property="og:description" content="Tutorial, arsitektur deep-dive, dan lessons dari proyek nyata. Build in public dari Jakarta."/>
+<meta property="og:image" content="https://ryrds.my.id/og-image.png"/>
+<meta property="og:site_name" content="Ryan Muliadi"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"Ryan Muliadi — Blog","url":"https://ryrds.my.id/blog","description":"Artikel teknis tentang cloud architecture, AI integration, dan independent consulting.","author":{"@type":"Person","name":"Ryan Muliadi","url":"https://ryrds.my.id"},"inLanguage":"id-ID"}</script>
+<title>Blog — Ryan Muliadi</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --cream:#F5F1E8;--cream2:#EDE8DC;--cream3:#E4DDD0;
+  --ink:#141210;--ink2:#2C2820;--ink3:#5A5248;--ink4:#8A8278;
+  --bd:rgba(20,18,16,0.1);--bd2:rgba(20,18,16,0.18);
+  --teal:#1A9E78;--teal2:#22C492;--tp:rgba(26,158,120,0.08);
+  --gold:#B8920A;--gold2:#D4AA20;--gp:rgba(184,146,10,0.08);
+  --red:#C04030;
+  --display:'Bebas Neue',sans-serif;
+  --serif:'Lora',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.018;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");}
+.z1{position:relative;z-index:1;}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(245,241,232,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--bd);}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 5vw;height:60px;display:flex;align-items:center;justify-content:space-between;gap:2rem;}
+.nav-name{font-family:var(--display);font-size:1.35rem;letter-spacing:0.06em;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:0.5rem;}
+.nav-name .dot{width:7px;height:7px;border-radius:50%;background:var(--teal);}
+.nav-links{display:flex;align-items:center;gap:0.2rem;}
+.nl{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding:0.45rem 0.85rem;color:var(--ink4);text-decoration:none;border-radius:5px;transition:all 0.2s;}
+.nl:hover{color:var(--ink);background:var(--bd);}
+.nl.active{color:var(--teal);background:var(--tp);}
+.nl.cta{background:var(--ink);color:var(--cream);margin-left:0.4rem;}
+.nl.cta:hover{background:var(--ink2);}
+
+.wrap{max-width:1280px;margin:0 auto;padding:0 5vw;}
+
+/* PAGE HEADER */
+.page-header{padding:3.5rem 0 2.5rem;border-bottom:1px solid var(--bd);}
+.ph-top{display:grid;grid-template-columns:1fr auto;align-items:end;gap:2rem;margin-bottom:2rem;}
+.ph-kicker{font-family:var(--mono);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--teal);display:flex;align-items:center;gap:0.75rem;margin-bottom:0.85rem;}
+.ph-kicker::before{content:'';width:22px;height:1px;background:var(--teal);}
+.ph-title{font-family:var(--display);font-size:clamp(3rem,8vw,6rem);letter-spacing:0.04em;line-height:0.92;color:var(--ink);}
+.ph-title em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--ink3);letter-spacing:0;}
+.ph-count{font-family:var(--display);font-size:4rem;letter-spacing:0.04em;color:var(--cream3);line-height:1;}
+
+/* FILTER BAR */
+.filter-bar{display:flex;gap:0.5rem;flex-wrap:wrap;}
+.filter-btn{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding:0.5rem 1rem;border-radius:5px;border:1.5px solid var(--bd2);background:transparent;color:var(--ink3);cursor:pointer;transition:all 0.2s;}
+.filter-btn:hover{border-color:var(--ink);color:var(--ink);}
+.filter-btn.active{background:var(--ink);color:var(--cream);border-color:var(--ink);}
+.filter-btn.teal{background:var(--tp);color:var(--teal);border-color:rgba(26,158,120,0.3);}
+
+/* MAIN LAYOUT */
+.blog-layout{display:grid;grid-template-columns:1fr 280px;gap:3rem;padding:3.5rem 0;}
+
+/* ARTICLE GRID */
+.article-list{display:flex;flex-direction:column;gap:0;}
+
+/* Featured — large horizontal card */
+.article-featured{
+  display:grid;grid-template-columns:1fr 1.1fr;gap:0;
+  background:white;border:1px solid var(--bd);border-radius:14px;
+  overflow:hidden;margin-bottom:1px;
+  text-decoration:none;color:inherit;
+  transition:all 0.3s ease;
+}
+.article-featured:hover{transform:translateY(-3px);box-shadow:0 20px 40px -16px rgba(20,18,16,0.15);border-color:var(--bd2);}
+.af-visual{
+  background:linear-gradient(135deg,var(--ink2),#1A2830);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;min-height:240px;
+}
+.af-visual::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 60% at 30% 50%,rgba(26,158,120,0.15) 0%,transparent 70%);}
+.af-visual-label{font-family:var(--display);font-size:6rem;letter-spacing:0.04em;color:rgba(245,241,232,0.05);line-height:1;}
+.af-platform{position:absolute;top:16px;left:16px;font-family:var(--mono);font-size:8.5px;letter-spacing:0.12em;text-transform:uppercase;padding:0.28rem 0.6rem;border-radius:3px;border:1px solid rgba(245,241,232,0.2);color:rgba(245,241,232,0.7);backdrop-filter:blur(8px);}
+.af-featured-badge{position:absolute;top:16px;right:16px;font-family:var(--mono);font-size:8px;letter-spacing:0.1em;text-transform:uppercase;padding:0.25rem 0.55rem;border-radius:3px;background:var(--teal);color:var(--cream);}
+.af-body{padding:2rem;display:flex;flex-direction:column;justify-content:space-between;}
+.af-meta{display:flex;align-items:center;gap:0.65rem;margin-bottom:0.85rem;}
+.af-pillar{font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);background:var(--tp);padding:0.22rem 0.55rem;border-radius:3px;}
+.af-date{font-family:var(--mono);font-size:9px;color:var(--ink4);}
+.af-title{font-family:var(--serif);font-size:1.55rem;font-weight:600;line-height:1.3;color:var(--ink);margin-bottom:0.85rem;}
+.af-excerpt{font-size:0.88rem;color:var(--ink3);line-height:1.75;flex:1;}
+.af-footer{margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;}
+.af-read{font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);display:flex;align-items:center;gap:0.4rem;}
+.af-time{font-family:var(--mono);font-size:9px;color:var(--ink4);}
+
+/* Regular article cards */
+.articles-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--bd);border:1px solid var(--bd);border-radius:14px;overflow:hidden;margin-top:1px;}
+.article-card{
+  background:var(--cream);padding:1.75rem;
+  text-decoration:none;color:inherit;
+  transition:background 0.2s;
+  display:flex;flex-direction:column;gap:0.6rem;
+  position:relative;
+}
+.article-card:hover{background:white;}
+.article-card::after{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--teal);transform:scaleY(0);transform-origin:top;transition:transform 0.3s ease;}
+.article-card:hover::after{transform:scaleY(1);}
+.ac-meta{display:flex;align-items:center;gap:0.55rem;}
+.ac-pillar{font-family:var(--mono);font-size:8.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);background:var(--tp);padding:0.18rem 0.5rem;border-radius:3px;}
+.ac-platform{font-family:var(--mono);font-size:8.5px;color:var(--ink4);letter-spacing:0.05em;}
+.ac-title{font-family:var(--serif);font-size:1.05rem;font-weight:600;line-height:1.35;color:var(--ink);}
+.ac-excerpt{font-size:0.82rem;color:var(--ink3);line-height:1.7;flex:1;}
+.ac-footer{display:flex;align-items:center;justify-content:space-between;padding-top:0.85rem;border-top:1px solid var(--bd);margin-top:auto;}
+.ac-date{font-family:var(--mono);font-size:8.5px;color:var(--ink4);}
+.ac-time{font-family:var(--mono);font-size:8.5px;color:var(--ink4);}
+
+/* SIDEBAR */
+.sidebar{display:flex;flex-direction:column;gap:1.5rem;}
+.sb-widget{background:white;border:1px solid var(--bd);border-radius:12px;overflow:hidden;}
+.sbw-header{padding:1rem 1.25rem;border-bottom:1px solid var(--bd);font-family:var(--mono);font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink4);}
+.sbw-body{padding:1.25rem;}
+
+/* Pillar list */
+.pillar-list{list-style:none;display:flex;flex-direction:column;gap:0;}
+.pl-item{display:flex;align-items:center;justify-content:space-between;padding:0.65rem 0;border-bottom:1px solid var(--bd);cursor:pointer;text-decoration:none;color:inherit;transition:all 0.2s;}
+.pl-item:last-child{border-bottom:none;}
+.pl-item:hover .pl-name{color:var(--teal);}
+.pl-name{font-size:0.85rem;font-weight:500;color:var(--ink);transition:color 0.2s;}
+.pl-count{font-family:var(--mono);font-size:9.5px;color:var(--ink4);background:var(--cream2);padding:0.18rem 0.55rem;border-radius:3px;}
+
+/* Newsletter widget */
+.nl-widget{background:var(--ink);border-radius:12px;overflow:hidden;}
+.nlw-body{padding:1.5rem;}
+.nlw-title{font-family:var(--display);font-size:1.4rem;letter-spacing:0.05em;color:var(--cream);margin-bottom:0.35rem;line-height:1;}
+.nlw-sub{font-size:0.8rem;color:rgba(245,241,232,0.5);line-height:1.6;margin-bottom:1rem;}
+.nlw-form{display:flex;flex-direction:column;gap:0.5rem;}
+.nlw-input{background:rgba(245,241,232,0.08);border:1px solid rgba(245,241,232,0.15);border-radius:6px;padding:0.7rem 0.85rem;font-family:var(--sans);font-size:0.85rem;color:var(--cream);outline:none;width:100%;}
+.nlw-input::placeholder{color:rgba(245,241,232,0.3);}
+.nlw-btn{background:var(--teal);color:var(--ink);border:none;border-radius:6px;padding:0.7rem 1rem;font-family:var(--mono);font-size:9.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;cursor:pointer;transition:background 0.2s;width:100%;}
+.nlw-btn:hover{background:var(--teal2);}
+.nlw-note{font-family:var(--mono);font-size:8px;color:rgba(245,241,232,0.25);letter-spacing:0.04em;text-align:center;}
+
+/* Popular tags */
+.tag-cloud{display:flex;flex-wrap:wrap;gap:0.4rem;}
+.tag{font-family:var(--mono);font-size:9px;letter-spacing:0.06em;padding:0.3rem 0.65rem;border-radius:4px;border:1px solid var(--bd2);color:var(--ink3);text-decoration:none;transition:all 0.2s;cursor:pointer;}
+.tag:hover{border-color:var(--teal);color:var(--teal);background:var(--tp);}
+
+/* PAGINATION */
+.pagination{display:flex;align-items:center;justify-content:center;gap:0.4rem;padding:3rem 0 2rem;}
+.pg{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:6px;border:1.5px solid var(--bd2);color:var(--ink3);cursor:pointer;text-decoration:none;transition:all 0.2s;}
+.pg:hover{border-color:var(--ink);color:var(--ink);}
+.pg.active{background:var(--ink);color:var(--cream);border-color:var(--ink);}
+.pg.arrow{width:auto;padding:0 0.85rem;gap:0.3rem;}
+
+@media(max-width:1024px){.blog-layout{grid-template-columns:1fr;}.article-featured{grid-template-columns:1fr;}.af-visual{min-height:160px;}}
+@media(max-width:640px){.articles-grid{grid-template-columns:1fr;}.nav-links{display:none;}.ph-top{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-name" href="ryrds-portfolio.html"><span class="dot"></span>RYAN MULIADI</a>
+    <div class="nav-links">
+      <a class="nl active" href="#">Blog</a>
+      <a class="nl" href="ryrds-videos.html">Videos</a>
+      <a class="nl" href="ryrds-projects.html">Projects</a>
+      <a class="nl" href="#">About</a>
+      <a class="nl cta" href="https://www.rd-systems.com" target="_blank">rd-systems.com ↗</a>
+    </div>
+  </div>
+</nav>
+
+<div class="z1">
+<div class="wrap">
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="ph-top">
+    <div>
+      <div class="ph-kicker">ryrds.my.id / blog</div>
+      <h1 class="ph-title">SEMUA<br/><em>Artikel.</em></h1>
+    </div>
+    <div class="ph-count">24</div>
+  </div>
+  <div class="filter-bar">
+    <button class="filter-btn active">Semua</button>
+    <button class="filter-btn teal">Build in Public</button>
+    <button class="filter-btn">Tutorial</button>
+    <button class="filter-btn">Architecture</button>
+    <button class="filter-btn">Indonesia Tech</button>
+    <button class="filter-btn">AI & Agentic</button>
+    <button class="filter-btn">Consultant</button>
+    <button class="filter-btn" style="margin-left:auto;border-style:dashed;">LinkedIn reposts</button>
+  </div>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="blog-layout">
+
+  <!-- LEFT: Articles -->
+  <div>
+    <!-- Featured -->
+    <a class="article-featured" href="#">
+      <div class="af-visual">
+        <div class="af-visual-label">ARCH</div>
+        <div class="af-platform">LinkedIn · Article</div>
+        <div class="af-featured-badge">Terpopuler</div>
+      </div>
+      <div class="af-body">
+        <div>
+          <div class="af-meta">
+            <span class="af-pillar">Architecture Deep-Dive</span>
+            <span class="af-date">12 Mei 2025</span>
+          </div>
+          <h2 class="af-title">Microservices Bukan Tentang Teknologi — Ini Tentang Conway's Law</h2>
+          <p class="af-excerpt">Setelah membangun 7 microservices untuk GiziKu dan mengadvice beberapa klien untuk migrate dari monolith, saya sampai pada satu kesimpulan yang mengubah cara saya advise klien: mayoritas migrasi yang gagal bukan karena masalah teknis — tapi karena structure mismatch antara arsitektur dan tim yang akan maintain-nya.</p>
+        </div>
+        <div class="af-footer">
+          <span class="af-read">Baca artikel →</span>
+          <span class="af-time">8 min read · 2.4k views</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Regular grid -->
+    <div class="articles-grid">
+
+      <a class="article-card" href="#">
+        <div class="ac-meta"><span class="ac-pillar">Tutorial</span><span class="ac-platform">· Blog</span></div>
+        <h3 class="ac-title">Cara Fix React Error #321 di Next.js 14 App Router + Zustand</h3>
+        <p class="ac-excerpt">Error yang saya temukan setelah 6 jam debugging — ternyata Zustand hook yang dipanggil di module level, bukan di dalam component.</p>
+        <div class="ac-footer"><span class="ac-date">8 Mei 2025</span><span class="ac-time">6 min</span></div>
+      </a>
+
+      <a class="article-card" href="#">
+        <div class="ac-meta"><span class="ac-pillar">Consultant</span><span class="ac-platform">· LinkedIn</span></div>
+        <h3 class="ac-title">3 Red Flags Klien yang Saya Pelajari dengan Cara yang Mahal</h3>
+        <p class="ac-excerpt">Scope creep, payment yang molor, dan brief yang berubah di tengah proyek. Pelajaran yang tidak ada di buku bisnis manapun.</p>
+        <div class="ac-footer"><span class="ac-date">5 Mei 2025</span><span class="ac-time">4 min</span></div>
+      </a>
+
+      <a class="article-card" href="#">
+        <div class="ac-meta"><span class="ac-pillar">AI & Agentic</span><span class="ac-platform">· Blog</span></div>
+        <h3 class="ac-title">RAG Pipeline dari Zero: PDF ke Production Q&A Bot</h3>
+        <p class="ac-excerpt">Langkah demi langkah membangun RAG dengan LangChain, ChromaDB, dan Claude — termasuk bagian yang biasanya tidak dibahas: chunking strategy.</p>
+        <div class="ac-footer"><span class="ac-date">2 Mei 2025</span><span class="ac-time">12 min</span></div>
+      </a>
+
+      <a class="article-card" href="#">
+        <div class="ac-meta"><span class="ac-pillar">Indonesia Tech</span><span class="ac-platform">· LinkedIn</span></div>
+        <h3 class="ac-title">Integrasi Midtrans Snap di React: 5 Pitfalls yang Tidak Ada di Docs</h3>
+        <p class="ac-excerpt">Dari CORS error, ke snap.js yang tidak load di production, ke webhook yang missing karena port forwarding yang salah di Railway.</p>
+        <div class="ac-footer"><span class="ac-date">28 Apr 2025</span><span class="ac-time">6 min</span></div>
+      </a>
+
+      <a class="article-card" href="#">
+        <div class="ac-meta"><span class="ac-pillar">Build in Public</span><span class="ac-platform">· Blog</span></div>
+        <h3 class="ac-title">ConstructPro Week 8: Dari Single Repo ke Turborepo Monorepo</h3>
+        <p class="ac-excerpt">Kenapa saya refactor di tengah development, bukan setelah selesai. Dan apa yang akan saya lakukan berbeda jika mulai dari awal.</p>
+        <div class="ac-footer"><span class="ac-date">22 Apr 2025</span><span class="ac-time">9 min</span></div>
+      </a>
+
+      <a class="article-card" href="#">
+        <div class="ac-meta"><span class="ac-pillar">Architecture</span><span class="ac-platform">· Blog</span></div>
+        <h3 class="ac-title">Multi-tenant di PostgreSQL: Row-Level Security vs Schema Isolation vs DB per Tenant</h3>
+        <p class="ac-excerpt">Tiga pendekatan dengan trade-off yang sangat berbeda. Pilihan yang salah di awal akan sangat mahal untuk di-migrate kemudian.</p>
+        <div class="ac-footer"><span class="ac-date">18 Apr 2025</span><span class="ac-time">11 min</span></div>
+      </a>
+
+      <a class="article-card" href="#">
+        <div class="ac-meta"><span class="ac-pillar">Consultant</span><span class="ac-platform">· LinkedIn</span></div>
+        <h3 class="ac-title">Kenapa Saya Tidak Pricing Per Jam Sebagai Independent Consultant</h3>
+        <p class="ac-excerpt">Billing per jam menciptakan insentif yang salah — klien ingin sedikit jam, consultant ingin banyak jam. Value-based pricing menyelesaikan ini.</p>
+        <div class="ac-footer"><span class="ac-date">14 Apr 2025</span><span class="ac-time">5 min</span></div>
+      </a>
+
+      <a class="article-card" href="#">
+        <div class="ac-meta"><span class="ac-pillar">Indonesia Tech</span><span class="ac-platform">· Blog</span></div>
+        <h3 class="ac-title">Railway vs Vercel vs Koyeb: Biaya Nyata untuk Startup Indonesia</h3>
+        <p class="ac-excerpt">Benchmark dengan traffic simulasi 10k MAU. Hasilnya cukup mengejutkan — bukan platform yang paling murah yang paling cost-efficient.</p>
+        <div class="ac-footer"><span class="ac-date">10 Apr 2025</span><span class="ac-time">7 min</span></div>
+      </a>
+
+      <a class="article-card" href="#">
+        <div class="ac-meta"><span class="ac-pillar">AI & Agentic</span><span class="ac-platform">· LinkedIn</span></div>
+        <h3 class="ac-title">LangGraph State Management: 4 Pola yang Saya Pakai di Production</h3>
+        <p class="ac-excerpt">Checkpoint, rollback, conditional routing, dan human-in-the-loop. Dengan kode yang bisa langsung dipakai.</p>
+        <div class="ac-footer"><span class="ac-date">7 Apr 2025</span><span class="ac-time">10 min</span></div>
+      </a>
+
+      <a class="article-card" href="#">
+        <div class="ac-meta"><span class="ac-pillar">Build in Public</span><span class="ac-platform">· Blog</span></div>
+        <h3 class="ac-title">AI Trading Bot: Menambahkan Circuit Breaker yang Mencegah Bencana</h3>
+        <p class="ac-excerpt">Simulasi yang hampir mengosongkan akun paper trading saya mengajarkan lebih banyak dari dokumentasi Alpaca manapun.</p>
+        <div class="ac-footer"><span class="ac-date">3 Apr 2025</span><span class="ac-time">8 min</span></div>
+      </a>
+
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <a class="pg arrow">← Prev</a>
+      <a class="pg active">1</a>
+      <a class="pg">2</a>
+      <a class="pg">3</a>
+      <span style="color:var(--ink4);font-family:var(--mono);font-size:10px;padding:0 0.25rem;">…</span>
+      <a class="pg">8</a>
+      <a class="pg arrow">Next →</a>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+
+    <!-- Newsletter -->
+    <div class="nl-widget">
+      <div class="nlw-body">
+        <div class="nlw-title">STAY IN THE LOOP</div>
+        <p class="nlw-sub">Weekly digest — artikel baru, lessons dari project aktif, satu insight teknis yang actionable.</p>
+        <div class="nlw-form">
+          <input class="nlw-input" type="email" placeholder="email@kamu.com"/>
+          <button class="nlw-btn">Subscribe →</button>
+          <div class="nlw-note">No spam · Unsubscribe anytime</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content Pillars -->
+    <div class="sb-widget">
+      <div class="sbw-header">Filter by Pillar</div>
+      <div class="sbw-body" style="padding:0.5rem 0;">
+        <ul class="pillar-list" style="padding:0 1rem;">
+          <li class="pl-item"><span class="pl-name">Semua Artikel</span><span class="pl-count">24</span></li>
+          <li class="pl-item"><span class="pl-name">Build in Public</span><span class="pl-count">7</span></li>
+          <li class="pl-item"><span class="pl-name">Tutorial Real Problems</span><span class="pl-count">5</span></li>
+          <li class="pl-item"><span class="pl-name">Architecture Deep-Dive</span><span class="pl-count">4</span></li>
+          <li class="pl-item"><span class="pl-name">Indonesia-Specific</span><span class="pl-count">4</span></li>
+          <li class="pl-item"><span class="pl-name">AI & Agentic Systems</span><span class="pl-count">3</span></li>
+          <li class="pl-item"><span class="pl-name">Consultant Perspective</span><span class="pl-count">1</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Tags -->
+    <div class="sb-widget">
+      <div class="sbw-header">Popular Tags</div>
+      <div class="sbw-body">
+        <div class="tag-cloud">
+          <a class="tag" href="#">Next.js</a>
+          <a class="tag" href="#">PostgreSQL</a>
+          <a class="tag" href="#">LangChain</a>
+          <a class="tag" href="#">Railway</a>
+          <a class="tag" href="#">Microservices</a>
+          <a class="tag" href="#">Midtrans</a>
+          <a class="tag" href="#">RAG</a>
+          <a class="tag" href="#">Turborepo</a>
+          <a class="tag" href="#">Claude AI</a>
+          <a class="tag" href="#">Agentic</a>
+          <a class="tag" href="#">Cloudflare</a>
+          <a class="tag" href="#">Consulting</a>
+          <a class="tag" href="#">Redis</a>
+          <a class="tag" href="#">TypeScript</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- About snippet -->
+    <div class="sb-widget">
+      <div class="sbw-header">Tentang Penulis</div>
+      <div class="sbw-body">
+        <div style="display:flex;align-items:center;gap:0.85rem;margin-bottom:0.85rem;">
+          <div style="width:44px;height:44px;border-radius:50%;background:var(--ink);border:2px solid var(--bd2);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:1rem;letter-spacing:0.05em;color:var(--teal2);flex-shrink:0;">RM</div>
+          <div>
+            <div style="font-weight:600;font-size:0.9rem;color:var(--ink);">Ryan Muliadi</div>
+            <div style="font-family:var(--mono);font-size:9px;color:var(--ink4);letter-spacing:0.06em;">Digital Systems Architect</div>
+          </div>
+        </div>
+        <p style="font-size:0.82rem;color:var(--ink3);line-height:1.7;margin-bottom:1rem;">Menulis tentang arsitektur, AI, dan hal-hal yang saya pelajari dari membangun sistem nyata.</p>
+        <a href="#" style="font-family:var(--mono);font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);text-decoration:none;display:flex;align-items:center;gap:0.35rem;">Selengkapnya →</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div><!-- end wrap -->
+</div><!-- end z1 -->
+
+<script>
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active','teal'));
+    btn.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

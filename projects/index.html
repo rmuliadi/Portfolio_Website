@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Portfolio proyek Ryan Muliadi — ConstructPro, GiziKu, AI Trading System, DataShield, dan lainnya. Case study arsitektur dan lessons dari sistem production."/>
+<meta name="keywords" content="Ryan Muliadi portfolio, ConstructPro SaaS, GiziKu healthtech, AI trading bot Indonesia, digital systems portfolio Jakarta"/>
+<meta name="author" content="Ryan Muliadi"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://ryrds.my.id/projects"/>
+<title>Projects — Ryan Muliadi | Portfolio Digital Systems</title>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://ryrds.my.id/projects"/>
+<meta property="og:title" content="Projects — Ryan Muliadi"/>
+<meta property="og:description" content="Case study dan portfolio proyek: ConstructPro, GiziKu, AI Trading System, dan lainnya."/>
+<meta property="og:image" content="https://ryrds.my.id/og-image.png"/>
+<meta property="og:site_name" content="Ryan Muliadi"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Ryan Muliadi — Project Portfolio","url":"https://ryrds.my.id/projects","description":"Portfolio proyek digital systems dari Ryan Muliadi.","author":{"@type":"Person","name":"Ryan Muliadi","url":"https://ryrds.my.id"}}</script>
+<title>Projects — Ryan Muliadi</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --cream:#F5F1E8;--cream2:#EDE8DC;--cream3:#E4DDD0;
+  --ink:#141210;--ink2:#2C2820;--ink3:#5A5248;--ink4:#8A8278;
+  --bd:rgba(20,18,16,0.1);--bd2:rgba(20,18,16,0.18);
+  --teal:#1A9E78;--teal2:#22C492;--tp:rgba(26,158,120,0.08);
+  --gold:#B8920A;--gold2:#D4AA20;--gp:rgba(184,146,10,0.08);
+  --red:#C04030;
+  --display:'Bebas Neue',sans-serif;--serif:'Lora',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;--mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.018;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");}
+.z1{position:relative;z-index:1;}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(245,241,232,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--bd);}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 5vw;height:60px;display:flex;align-items:center;justify-content:space-between;gap:2rem;}
+.nav-name{font-family:var(--display);font-size:1.35rem;letter-spacing:0.06em;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:0.5rem;}
+.nav-name .dot{width:7px;height:7px;border-radius:50%;background:var(--teal);}
+.nav-links{display:flex;align-items:center;gap:0.2rem;}
+.nl{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding:0.45rem 0.85rem;color:var(--ink4);text-decoration:none;border-radius:5px;transition:all 0.2s;}
+.nl:hover{color:var(--ink);background:var(--bd);}
+.nl.active{color:var(--teal);background:var(--tp);}
+.nl.cta{background:var(--ink);color:var(--cream);margin-left:0.4rem;}
+.nl.cta:hover{background:var(--ink2);}
+
+.wrap{max-width:1280px;margin:0 auto;padding:0 5vw;}
+
+/* PAGE HEADER */
+.page-header{padding:3.5rem 0 2.5rem;border-bottom:1px solid var(--bd);}
+.ph-kicker{font-family:var(--mono);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--teal);display:flex;align-items:center;gap:0.75rem;margin-bottom:0.85rem;}
+.ph-kicker::before{content:'';width:22px;height:1px;background:var(--teal);}
+.ph-row{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;margin-bottom:2rem;}
+.ph-title{font-family:var(--display);font-size:clamp(3rem,8vw,6rem);letter-spacing:0.04em;line-height:0.92;color:var(--ink);}
+.ph-title em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--ink3);letter-spacing:0;}
+
+/* STATUS LEGEND */
+.status-legend{display:flex;gap:1.25rem;flex-wrap:wrap;}
+.sl-item{display:flex;align-items:center;gap:0.45rem;font-family:var(--mono);font-size:9.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink4);}
+.sl-dot{width:8px;height:8px;border-radius:50%;}
+.sl-dot.production{background:var(--teal);box-shadow:0 0 6px var(--teal);}
+.sl-dot.prototype{background:var(--gold);}
+.sl-dot.concept{background:var(--ink4);}
+
+/* FEATURED PROJECT */
+.project-featured{
+  margin:3rem 0 1px;
+  background:var(--ink2);
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid var(--bd);
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+}
+.pf-visual{
+  padding:2.5rem;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  background:linear-gradient(135deg,var(--ink) 0%,#0A1820 100%);
+  position:relative;
+  overflow:hidden;
+  min-height:360px;
+}
+.pf-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 20% 80%,rgba(26,158,120,0.18) 0%,transparent 60%);}
+.pfv-bg-text{position:absolute;bottom:-20px;right:-10px;font-family:var(--display);font-size:7rem;letter-spacing:0.04em;color:rgba(245,241,232,0.04);line-height:1;z-index:0;}
+.pfv-top{z-index:1;}
+.pfv-status{display:inline-flex;align-items:center;gap:0.45rem;font-family:var(--mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;background:rgba(26,158,120,0.15);color:var(--teal2);padding:0.28rem 0.65rem;border-radius:3px;margin-bottom:1.25rem;border:1px solid rgba(26,158,120,0.3);}
+.pfv-status::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--teal2);box-shadow:0 0 6px var(--teal2);}
+.pfv-name{font-family:var(--display);font-size:3.5rem;letter-spacing:0.04em;color:var(--cream);line-height:0.9;margin-bottom:0.5rem;}
+.pfv-type{font-family:var(--mono);font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(245,241,232,0.4);}
+.pfv-bottom{z-index:1;}
+.pfv-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(245,241,232,0.08);border-radius:8px;overflow:hidden;border:1px solid rgba(245,241,232,0.08);}
+.pfv-metric{background:rgba(245,241,232,0.04);padding:0.85rem;text-align:center;}
+.pfv-metric-num{font-family:var(--display);font-size:1.6rem;letter-spacing:0.04em;color:var(--teal2);line-height:1;}
+.pfv-metric-label{font-family:var(--mono);font-size:8px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(245,241,232,0.35);margin-top:2px;}
+
+.pf-body{padding:2.5rem;display:flex;flex-direction:column;justify-content:space-between;background:var(--cream);}
+.pfb-meta{margin-bottom:1.25rem;}
+.pfb-vertical{font-family:var(--mono);font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--teal);background:var(--tp);padding:0.22rem 0.55rem;border-radius:3px;display:inline-block;margin-bottom:0.85rem;}
+.pfb-title{font-family:var(--serif);font-size:1.4rem;font-weight:600;line-height:1.35;color:var(--ink);margin-bottom:0.75rem;}
+.pfb-desc{font-size:0.9rem;color:var(--ink3);line-height:1.8;}
+
+.pfb-problem{background:var(--cream2);border-radius:8px;padding:1.1rem 1.25rem;margin:1.25rem 0;}
+.pfb-problem-label{font-family:var(--mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink4);margin-bottom:0.4rem;}
+.pfb-problem-text{font-family:var(--serif);font-style:italic;font-size:0.92rem;color:var(--ink);line-height:1.6;}
+
+.pfb-tech{padding-top:1.25rem;border-top:1px solid var(--bd);}
+.pfb-tech-label{font-family:var(--mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink4);margin-bottom:0.65rem;}
+.pfb-tech-tags{display:flex;flex-wrap:wrap;gap:0.4rem;}
+.tech-tag{font-family:var(--mono);font-size:9px;padding:0.25rem 0.6rem;border-radius:3px;background:white;border:1px solid var(--bd);color:var(--ink3);}
+
+.pfb-links{display:flex;gap:0.65rem;margin-top:1.25rem;}
+.pfb-link{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding:0.65rem 1.1rem;border-radius:5px;text-decoration:none;transition:all 0.2s;display:flex;align-items:center;gap:0.4rem;}
+.pfb-link.primary{background:var(--ink);color:var(--cream);}
+.pfb-link.primary:hover{background:var(--ink2);}
+.pfb-link.secondary{border:1.5px solid var(--bd2);color:var(--ink3);}
+.pfb-link.secondary:hover{border-color:var(--ink);color:var(--ink);}
+
+/* PROJECT LIST */
+.project-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.25rem;
+  padding:3rem 0;
+}
+.project-card{
+  background:white;border:1px solid var(--bd);border-radius:14px;
+  overflow:hidden;text-decoration:none;color:inherit;
+  transition:all 0.3s ease;
+  display:flex;flex-direction:column;
+  position:relative;
+}
+.project-card:hover{transform:translateY(-4px);box-shadow:0 18px 38px -14px rgba(20,18,16,0.15);border-color:var(--bd2);}
+
+.pc-header{
+  background:var(--ink2);
+  padding:1.75rem;
+  position:relative;
+  overflow:hidden;
+  min-height:140px;
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.pc-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 20% 80%,rgba(26,158,120,0.12) 0%,transparent 60%);}
+.pc-bg{position:absolute;bottom:-10px;right:8px;font-family:var(--display);font-size:4rem;letter-spacing:0.04em;color:rgba(245,241,232,0.04);line-height:1;}
+.pc-status{display:inline-flex;align-items:center;gap:0.4rem;font-family:var(--mono);font-size:8.5px;letter-spacing:0.1em;text-transform:uppercase;padding:0.2rem 0.55rem;border-radius:3px;position:relative;z-index:1;align-self:flex-start;}
+.pc-status.production{background:rgba(26,158,120,0.15);color:var(--teal2);border:1px solid rgba(26,158,120,0.25);}
+.pc-status.production::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--teal2);box-shadow:0 0 5px var(--teal2);}
+.pc-status.prototype{background:rgba(184,146,10,0.12);color:var(--gold2);border:1px solid rgba(184,146,10,0.2);}
+.pc-status.prototype::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold2);}
+.pc-status.concept{background:rgba(245,241,232,0.06);color:rgba(245,241,232,0.4);border:1px solid rgba(245,241,232,0.1);}
+.pc-status.concept::before{content:'';width:5px;height:5px;border-radius:50%;background:rgba(245,241,232,0.3);}
+.pc-name-row{display:flex;align-items:flex-end;justify-content:space-between;position:relative;z-index:1;}
+.pc-name{font-family:var(--display);font-size:2rem;letter-spacing:0.04em;color:var(--cream);line-height:1;}
+.pc-year{font-family:var(--mono);font-size:9px;color:rgba(245,241,232,0.3);letter-spacing:0.08em;}
+
+.pc-body{padding:1.5rem;flex:1;display:flex;flex-direction:column;gap:0.65rem;}
+.pc-vertical{font-family:var(--mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);background:var(--tp);padding:0.2rem 0.5rem;border-radius:3px;display:inline-block;align-self:flex-start;}
+.pc-desc{font-size:0.85rem;color:var(--ink3);line-height:1.75;flex:1;}
+.pc-tech{font-family:var(--mono);font-size:8.5px;color:var(--ink4);line-height:1.65;padding-top:0.85rem;border-top:1px solid var(--bd);}
+
+.pc-footer{padding:0 1.5rem 1.5rem;display:flex;gap:0.5rem;}
+.pc-btn{font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;padding:0.5rem 0.85rem;border-radius:4px;text-decoration:none;transition:all 0.2s;display:flex;align-items:center;gap:0.35rem;}
+.pc-btn.primary{background:var(--ink);color:var(--cream);flex:1;justify-content:center;}
+.pc-btn.primary:hover{background:var(--ink2);}
+.pc-btn.gh{border:1.5px solid var(--bd2);color:var(--ink3);}
+.pc-btn.gh:hover{border-color:var(--ink);color:var(--ink);}
+
+/* LESSONS SECTION */
+.lessons{padding:4rem 0;border-top:1px solid var(--bd);}
+.lessons-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bd);border:1px solid var(--bd);border-radius:14px;overflow:hidden;margin-top:2rem;}
+.lesson-card{background:var(--cream);padding:1.75rem;transition:background 0.2s;}
+.lesson-card:hover{background:white;}
+.lc-num{font-family:var(--display);font-size:2rem;letter-spacing:0.04em;color:var(--cream3);margin-bottom:0.75rem;line-height:1;}
+.lesson-card:hover .lc-num{color:var(--teal2);}
+.lc-project{font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink4);margin-bottom:0.5rem;}
+.lc-lesson{font-family:var(--serif);font-size:0.95rem;font-style:italic;color:var(--ink);line-height:1.5;margin-bottom:0.5rem;}
+.lc-desc{font-size:0.8rem;color:var(--ink3);line-height:1.65;}
+
+/* OPEN SOURCE */
+.os-section{padding:4rem 0 5rem;border-top:1px solid var(--bd);}
+.os-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem;}
+.os-card{background:white;border:1px solid var(--bd);border-radius:10px;padding:1.4rem;display:flex;align-items:flex-start;gap:1rem;text-decoration:none;color:inherit;transition:all 0.2s;}
+.os-card:hover{border-color:var(--bd2);transform:translateX(3px);}
+.os-icon{width:38px;height:38px;border-radius:8px;background:var(--cream2);border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;}
+.os-info{flex:1;}
+.os-name{font-family:var(--mono);font-size:0.88rem;font-weight:500;color:var(--teal);margin-bottom:0.3rem;}
+.os-desc{font-size:0.82rem;color:var(--ink3);line-height:1.55;margin-bottom:0.5rem;}
+.os-meta{font-family:var(--mono);font-size:9px;color:var(--ink4);letter-spacing:0.04em;}
+
+.sec-title-simple{font-family:var(--display);font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:0.04em;color:var(--ink);}
+.sec-title-simple em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--ink3);letter-spacing:0;}
+
+@media(max-width:1024px){.project-featured{grid-template-columns:1fr;}.project-grid{grid-template-columns:1fr 1fr;}.lessons-grid{grid-template-columns:1fr 1fr;}.os-grid{grid-template-columns:1fr;}}
+@media(max-width:640px){.project-grid{grid-template-columns:1fr;}.lessons-grid{grid-template-columns:1fr;}.nav-links{display:none;}.ph-row{flex-direction:column;align-items:flex-start;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="nav-name" href="ryrds-portfolio.html"><span class="dot"></span>RYAN MULIADI</a>
+    <div class="nav-links">
+      <a class="nl" href="ryrds-blog.html">Blog</a>
+      <a class="nl" href="ryrds-videos.html">Videos</a>
+      <a class="nl active" href="#">Projects</a>
+      <a class="nl" href="#">About</a>
+      <a class="nl cta" href="https://www.rd-systems.com" target="_blank">rd-systems.com ↗</a>
+    </div>
+  </div>
+</nav>
+
+<div class="z1">
+<div class="wrap">
+
+<div class="page-header">
+  <div class="ph-kicker">ryrds.my.id / projects · 6 Proyek Aktif & Selesai</div>
+  <div class="ph-row">
+    <h1 class="ph-title">SEMUA<br/><em>Proyek.</em></h1>
+    <div class="status-legend">
+      <div class="sl-item"><div class="sl-dot production"></div>Production</div>
+      <div class="sl-item"><div class="sl-dot prototype"></div>Prototype</div>
+      <div class="sl-item"><div class="sl-dot concept"></div>Concept</div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURED: CONSTRUCTPRO -->
+<div class="project-featured">
+  <div class="pf-visual">
+    <div class="pfv-bg-text">CONST</div>
+    <div class="pfv-top">
+      <div class="pfv-status">Production · B2B SaaS</div>
+      <div class="pfv-name">CONSTRUCT<br/>PRO</div>
+      <div class="pfv-type">Construction & Property Management Platform</div>
+    </div>
+    <div class="pfv-bottom">
+      <div class="pfv-metrics">
+        <div class="pfv-metric"><div class="pfv-metric-num">7</div><div class="pfv-metric-label">Modules</div></div>
+        <div class="pfv-metric"><div class="pfv-metric-num">3</div><div class="pfv-metric-label">DB Types</div></div>
+        <div class="pfv-metric"><div class="pfv-metric-num">4+</div><div class="pfv-metric-label">Mo Dev</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="pf-body">
+    <div>
+      <div class="pfb-vertical">Construction · Property</div>
+      <h2 class="pfb-title">Platform B2B SaaS untuk manajemen proyek konstruksi dan properti Indonesia</h2>
+      <p class="pfb-desc">ConstructPro menggantikan Excel + WhatsApp yang masih dipakai mayoritas kontraktor Indonesia. Multi-tenant architecture, role-based access yang merefleksikan hierarki proyek nyata, dan OCR pipeline untuk auto-extract data dari dokumen approval.</p>
+    </div>
+    <div class="pfb-problem">
+      <div class="pfb-problem-label">Problem yang diselesaikan</div>
+      <div class="pfb-problem-text">"Tim saya coordinate pakai WhatsApp dan Excel. Ketika 3 proyek jalan bersamaan, kami selalu salah versi dokumen dan tidak tahu siapa approve apa."</div>
+    </div>
+    <div class="pfb-tech">
+      <div class="pfb-tech-label">Tech Stack</div>
+      <div class="pfb-tech-tags">
+        <span class="tech-tag">Next.js 14</span>
+        <span class="tech-tag">Express.js</span>
+        <span class="tech-tag">PostgreSQL</span>
+        <span class="tech-tag">MongoDB</span>
+        <span class="tech-tag">Redis</span>
+        <span class="tech-tag">Cloudinary</span>
+        <span class="tech-tag">Turborepo</span>
+        <span class="tech-tag">Railway</span>
+        <span class="tech-tag">Vercel</span>
+      </div>
+    </div>
+    <div class="pfb-links">
+      <a class="pfb-link primary" href="#">Case Study Lengkap →</a>
+      <a class="pfb-link secondary" href="#">GitHub ↗</a>
+      <a class="pfb-link secondary" href="#">Live Demo ↗</a>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECT GRID -->
+<div class="project-grid">
+
+  <a class="project-card" href="#">
+    <div class="pc-header">
+      <div class="pc-bg">GIZI</div>
+      <div class="pc-status production">Production</div>
+      <div class="pc-name-row"><div class="pc-name">GiziKu</div><div class="pc-year">2024</div></div>
+    </div>
+    <div class="pc-body">
+      <span class="pc-vertical">HealthTech · SaaS</span>
+      <p class="pc-desc">Platform tracking nutrisi untuk pasar Indonesia. 7 microservices dengan Cloudflare Workers sebagai API gateway, payment lokal via Midtrans, dan AI meal recommendations.</p>
+      <div class="pc-tech">React 18 · Vite · Node.js · PostgreSQL · MongoDB · Redis · Cloudflare Workers · Midtrans</div>
+    </div>
+    <div class="pc-footer">
+      <a class="pc-btn primary" href="#">Case Study</a>
+      <a class="pc-btn gh" href="#">GH ↗</a>
+    </div>
+  </a>
+
+  <a class="project-card" href="#">
+    <div class="pc-header" style="background:linear-gradient(135deg,#0A1A20,#0A140A);">
+      <div class="pc-bg">BOT</div>
+      <div class="pc-status production">Production</div>
+      <div class="pc-name-row"><div class="pc-name">AI Trading</div><div class="pc-year">2024</div></div>
+    </div>
+    <div class="pc-body">
+      <span class="pc-vertical">FinTech · Agentic AI</span>
+      <p class="pc-desc">Agentic trading bot dengan Alpaca paper trading, futures simulator, web dashboard, Telegram HITL integration, dan risk manager dengan circuit breaker dan consecutive loss protection.</p>
+      <div class="pc-tech">TypeScript · Node.js · Alpaca API · Telegram Bot · Railway · Express</div>
+    </div>
+    <div class="pc-footer">
+      <a class="pc-btn primary" href="#">Case Study</a>
+      <a class="pc-btn gh" href="#">GH ↗</a>
+    </div>
+  </a>
+
+  <a class="project-card" href="#">
+    <div class="pc-header" style="background:linear-gradient(135deg,#141A10,#0A1A14);">
+      <div class="pc-bg">JRP</div>
+      <div class="pc-status production">Production</div>
+      <div class="pc-name-row"><div class="pc-name">PT JRP System</div><div class="pc-year">2024</div></div>
+    </div>
+    <div class="pc-body">
+      <span class="pc-vertical">Property · AI Customer Service</span>
+      <p class="pc-desc">Customer complaint handling system dengan WhatsApp bot multi-step triage, RAG dari knowledge base PT JRP, Gemini Vision untuk analisis foto kerusakan, dan role-based CRUD.</p>
+      <div class="pc-tech">NestJS · Next.js 14 · Supabase · Redis · Cloudflare R2 · Fonnte · Gemini Flash</div>
+    </div>
+    <div class="pc-footer">
+      <a class="pc-btn primary" href="#">Case Study</a>
+      <a class="pc-btn gh" href="#">GH ↗</a>
+    </div>
+  </a>
+
+  <a class="project-card" href="#">
+    <div class="pc-header" style="background:linear-gradient(135deg,#1A1206,#12100A);">
+      <div class="pc-bg">DATA</div>
+      <div class="pc-status concept">Concept</div>
+      <div class="pc-name-row"><div class="pc-name">DataShield</div><div class="pc-year">2024</div></div>
+    </div>
+    <div class="pc-body">
+      <span class="pc-vertical" style="color:var(--gold);background:var(--gp);">Enterprise · DSaaS</span>
+      <p class="pc-desc">Data security platform concept dengan 10 modul: governance, DLP, DSPM, eDiscovery, encryption, dan compliance framework untuk enterprise Indonesia dengan regulasi PDPA.</p>
+      <div class="pc-tech">Architecture Design · Compliance Framework · Multi-tenant SaaS · PDPA Indonesia</div>
+    </div>
+    <div class="pc-footer">
+      <a class="pc-btn primary" href="#">Architecture Deck</a>
+    </div>
+  </a>
+
+  <a class="project-card" href="#">
+    <div class="pc-header" style="background:linear-gradient(135deg,#0A1820,#060A14);">
+      <div class="pc-bg">MEDI</div>
+      <div class="pc-status prototype">Prototype</div>
+      <div class="pc-name-row"><div class="pc-name">MediCore</div><div class="pc-year">2024</div></div>
+    </div>
+    <div class="pc-body">
+      <span class="pc-vertical">HealthTech · Registration</span>
+      <p class="pc-desc">Patient online registration system untuk klinik dan rumah sakit Indonesia. Workflow booking hingga appointment reminder via WhatsApp dengan integrasi BPJS verification.</p>
+      <div class="pc-tech">React · Node.js · PostgreSQL · WhatsApp Business API · BPJS Integration</div>
+    </div>
+    <div class="pc-footer">
+      <a class="pc-btn primary" href="#">Case Study</a>
+      <a class="pc-btn gh" href="#">GH ↗</a>
+    </div>
+  </a>
+
+  <a class="project-card" href="#">
+    <div class="pc-header" style="background:linear-gradient(135deg,#1A0A14,#120A0A);">
+      <div class="pc-bg">SHOP</div>
+      <div class="pc-status concept">Concept</div>
+      <div class="pc-name-row"><div class="pc-name">Cantika</div><div class="pc-year">2024</div></div>
+    </div>
+    <div class="pc-body">
+      <span class="pc-vertical" style="color:var(--gold);background:var(--gp);">E-Commerce · Fashion</span>
+      <p class="pc-desc">Konsep platform fashion wanita dengan strategi sourcing langsung dari China via 1688/Taobao. Landing page dengan conversion optimization dan brand storytelling untuk pasar Indonesia.</p>
+      <div class="pc-tech">Brand Strategy · Landing Page · Sourcing Strategy · China Market</div>
+    </div>
+    <div class="pc-footer">
+      <a class="pc-btn primary" href="#">Brand Deck</a>
+    </div>
+  </a>
+
+</div>
+
+<!-- LESSONS LEARNED -->
+<div class="lessons">
+  <div class="sec-title-simple">Pelajaran <em>dari Proyek Nyata</em></div>
+  <div class="lessons-grid">
+    <div class="lesson-card">
+      <div class="lc-num">01</div>
+      <div class="lc-project">GiziKu · 7 Microservices</div>
+      <div class="lc-lesson">"Microservices bukan tentang scale — tapi tentang team boundary."</div>
+      <p class="lc-desc">Saat saya build 7 microservices sendirian, overhead koordinasi hampir membunuh momentum. Conway's Law bekerja dalam dua arah.</p>
+    </div>
+    <div class="lesson-card">
+      <div class="lc-num">02</div>
+      <div class="lc-project">ConstructPro · Multi-tenant</div>
+      <div class="lc-lesson">"Row-level security di PostgreSQL menghemat 3 bulan refactor."</div>
+      <p class="lc-desc">Memilih RLS dari hari pertama — bukan schema per tenant — terbukti benar ketika klien pertama minta data isolation yang lebih ketat.</p>
+    </div>
+    <div class="lesson-card">
+      <div class="lc-num">03</div>
+      <div class="lc-project">AI Trading Bot</div>
+      <div class="lc-lesson">"Circuit breaker adalah fitur pertama yang harus dibangun, bukan yang terakhir."</div>
+      <p class="lc-desc">Simulasi paper trading saya kehilangan 40% dalam 2 jam karena consecutive loss tanpa protection. Sekarang saya build risk layer sebelum strategy layer.</p>
+    </div>
+    <div class="lesson-card">
+      <div class="lc-num">04</div>
+      <div class="lc-project">PT JRP · WhatsApp RAG</div>
+      <div class="lc-lesson">"Kualitas knowledge base lebih penting dari kualitas LLM."</div>
+      <p class="lc-desc">Chunking strategy yang buruk membuat retrieval jadi noise. Ganti GPT-4 dengan Claude tidak mengubah apapun — tapi fix chunking meningkatkan accuracy 40%.</p>
+    </div>
+    <div class="lesson-card">
+      <div class="lc-num">05</div>
+      <div class="lc-project">Midtrans Integration</div>
+      <div class="lc-lesson">"Selalu test webhook di production, bukan hanya lokal."</div>
+      <p class="lc-desc">Ngrok forwarding bekerja sempurna. Production webhook silent-fail karena port Railway yang berbeda. 2 hari debugging untuk hal yang harusnya 2 jam.</p>
+    </div>
+    <div class="lesson-card">
+      <div class="lc-num">06</div>
+      <div class="lc-project">Semua Proyek</div>
+      <div class="lc-lesson">"Dokumentasi yang ditulis saat build 10x lebih baik dari dokumentasi setelah selesai."</div>
+      <p class="lc-desc">Semua keputusan arsitektur yang saya tulis di ADR saat build terbukti menghemat waktu onboarding klien dan future-me yang lupa kenapa pilihan itu dibuat.</p>
+    </div>
+  </div>
+</div>
+
+<!-- OPEN SOURCE -->
+<div class="os-section">
+  <div class="sec-title-simple">Open <em>Source</em></div>
+  <p style="font-size:0.9rem;color:var(--ink3);margin:0.5rem 0 0;max-width:54ch;line-height:1.7;">Komponen dan utilities dari proyek di atas yang saya rilis sebagai open source. Semua MIT license.</p>
+  <div class="os-grid">
+    <a class="os-card" href="#" target="_blank">
+      <div class="os-icon">⚙️</div>
+      <div class="os-info">
+        <div class="os-name">next-midtrans</div>
+        <div class="os-desc">Next.js wrapper untuk Midtrans Snap dengan TypeScript support, webhook handler, dan server action integration.</div>
+        <div class="os-meta">TypeScript · 48 stars · MIT</div>
+      </div>
+    </a>
+    <a class="os-card" href="#" target="_blank">
+      <div class="os-icon">🤖</div>
+      <div class="os-info">
+        <div class="os-name">langchain-rag-starter</div>
+        <div class="os-desc">Production-ready RAG starter dengan LangChain, ChromaDB, dan Claude. Termasuk chunking strategies dan evaluation utilities.</div>
+        <div class="os-meta">Python · 127 stars · MIT</div>
+      </div>
+    </a>
+    <a class="os-card" href="#" target="_blank">
+      <div class="os-icon">🛡️</div>
+      <div class="os-info">
+        <div class="os-name">trading-risk-manager</div>
+        <div class="os-desc">Risk management module dari AI trading bot: circuit breaker, consecutive loss protection, dan position sizing. Framework agnostic.</div>
+        <div class="os-meta">TypeScript · 31 stars · MIT</div>
+      </div>
+    </a>
+    <a class="os-card" href="#" target="_blank">
+      <div class="os-icon">🗄️</div>
+      <div class="os-info">
+        <div class="os-name">pg-multitenant</div>
+        <div class="os-desc">PostgreSQL multi-tenant utilities: RLS helper, tenant context middleware, dan migration tools untuk Prisma.</div>
+        <div class="os-meta">TypeScript · 22 stars · MIT</div>
+      </div>
+    </a>
+  </div>
+</div>
+
+</div><!-- end wrap -->
+</div><!-- end z1 -->
+</body>
+</html>

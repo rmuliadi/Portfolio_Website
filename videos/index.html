@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Tutorial video arsitektur sistem, AI integration, dan build in public dari Ryan Muliadi. YouTube series, shorts, dan walkthroughs dari proyek nyata."/>
+<meta name="keywords" content="Ryan Muliadi YouTube, tutorial cloud architecture video, LangChain tutorial Indonesia, Next.js tutorial Indonesia"/>
+<meta name="author" content="Ryan Muliadi"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://ryrds.my.id/videos"/>
+<title>Videos — Ryan Muliadi | Tutorial & Build in Public</title>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://ryrds.my.id/videos"/>
+<meta property="og:title" content="Videos — Ryan Muliadi"/>
+<meta property="og:description" content="Tutorial video arsitektur sistem dan AI dari Jakarta. YouTube series dan shorts."/>
+<meta property="og:image" content="https://ryrds.my.id/og-image.png"/>
+<meta property="og:site_name" content="Ryan Muliadi"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Ryan Muliadi Video Tutorials","url":"https://ryrds.my.id/videos","description":"Tutorial video cloud architecture, AI integration, dan build in public.","author":{"@type":"Person","name":"Ryan Muliadi"}}</script>
+<title>Videos — Ryan Muliadi</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --cream:#F5F1E8;--cream2:#EDE8DC;--cream3:#E4DDD0;
+  --ink:#141210;--ink2:#2C2820;--ink3:#5A5248;--ink4:#8A8278;
+  --bd:rgba(20,18,16,0.1);--bd2:rgba(20,18,16,0.18);
+  --teal:#1A9E78;--teal2:#22C492;--tp:rgba(26,158,120,0.08);
+  --gold:#B8920A;--gold2:#D4AA20;--gp:rgba(184,146,10,0.08);
+  --yt:#FF0000;--yt-pale:rgba(255,0,0,0.06);
+  --display:'Bebas Neue',sans-serif;--serif:'Lora',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;--mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.018;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");}
+.z1{position:relative;z-index:1;}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(245,241,232,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--bd);}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 5vw;height:60px;display:flex;align-items:center;justify-content:space-between;gap:2rem;}
+.nav-name{font-family:var(--display);font-size:1.35rem;letter-spacing:0.06em;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:0.5rem;}
+.nav-name .dot{width:7px;height:7px;border-radius:50%;background:var(--teal);}
+.nav-links{display:flex;align-items:center;gap:0.2rem;}
+.nl{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding:0.45rem 0.85rem;color:var(--ink4);text-decoration:none;border-radius:5px;transition:all 0.2s;}
+.nl:hover{color:var(--ink);background:var(--bd);}
+.nl.active{color:var(--teal);background:var(--tp);}
+.nl.cta{background:var(--ink);color:var(--cream);margin-left:0.4rem;}
+.nl.cta:hover{background:var(--ink2);}
+
+.wrap{max-width:1280px;margin:0 auto;padding:0 5vw;}
+
+/* PAGE HEADER */
+.page-header{padding:3.5rem 0 2.5rem;border-bottom:1px solid var(--bd);}
+.ph-kicker{font-family:var(--mono);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--yt);display:flex;align-items:center;gap:0.75rem;margin-bottom:0.85rem;}
+.ph-kicker::before{content:'';width:22px;height:1px;background:var(--yt);}
+.ph-row{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;margin-bottom:2rem;}
+.ph-title{font-family:var(--display);font-size:clamp(3rem,8vw,6rem);letter-spacing:0.04em;line-height:0.92;color:var(--ink);}
+.ph-title em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--ink3);letter-spacing:0;}
+.yt-subscribe{display:inline-flex;align-items:center;gap:0.6rem;background:var(--yt);color:white;padding:0.75rem 1.25rem;border-radius:6px;font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;text-decoration:none;transition:all 0.2s;}
+.yt-subscribe:hover{background:#CC0000;transform:translateY(-2px);}
+.yt-subscribe svg{flex-shrink:0;}
+
+.filter-bar{display:flex;gap:0.5rem;flex-wrap:wrap;}
+.filter-btn{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding:0.5rem 1rem;border-radius:5px;border:1.5px solid var(--bd2);background:transparent;color:var(--ink3);cursor:pointer;transition:all 0.2s;}
+.filter-btn:hover{border-color:var(--ink);color:var(--ink);}
+.filter-btn.active{background:var(--ink);color:var(--cream);border-color:var(--ink);}
+
+/* FEATURED VIDEO */
+.featured-video{margin-top:3rem;display:grid;grid-template-columns:1.4fr 1fr;gap:2rem;background:var(--ink2);border-radius:16px;overflow:hidden;border:1px solid var(--bd);}
+.fv-embed{position:relative;background:#000;aspect-ratio:16/9;overflow:hidden;cursor:pointer;}
+.fv-thumb{width:100%;height:100%;background:linear-gradient(135deg,#0A0E14,#1A2830);display:flex;align-items:center;justify-content:center;position:relative;}
+.fv-thumb::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 40% 50%,rgba(26,158,120,0.15) 0%,transparent 70%);}
+.fv-thumb-label{font-family:var(--display);font-size:5rem;letter-spacing:0.04em;color:rgba(245,241,232,0.05);line-height:1;}
+.fv-play-btn{position:absolute;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.95);display:flex;align-items:center;justify-content:center;transition:all 0.2s;z-index:2;}
+.fv-embed:hover .fv-play-btn{transform:scale(1.1);background:white;}
+.fv-play-btn svg{margin-left:4px;}
+.fv-duration{position:absolute;bottom:12px;right:12px;font-family:var(--mono);font-size:10px;background:rgba(0,0,0,0.75);color:white;padding:0.2rem 0.5rem;border-radius:3px;z-index:2;}
+.fv-new-badge{position:absolute;top:12px;left:12px;font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;background:var(--yt);color:white;padding:0.22rem 0.55rem;border-radius:3px;z-index:2;}
+.fv-body{padding:2rem;display:flex;flex-direction:column;justify-content:center;}
+.fv-meta{display:flex;align-items:center;gap:0.65rem;margin-bottom:0.85rem;}
+.fv-pillar{font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal2);background:rgba(34,196,146,0.12);padding:0.22rem 0.55rem;border-radius:3px;}
+.fv-date{font-family:var(--mono);font-size:9px;color:rgba(245,241,232,0.4);}
+.fv-title{font-family:var(--serif);font-size:1.5rem;font-weight:600;line-height:1.3;color:var(--cream);margin-bottom:0.85rem;}
+.fv-desc{font-size:0.87rem;color:rgba(245,241,232,0.55);line-height:1.75;margin-bottom:1.5rem;}
+.fv-resources{display:flex;flex-direction:column;gap:0.45rem;padding-top:1.25rem;border-top:1px solid rgba(245,241,232,0.1);}
+.fv-res-label{font-family:var(--mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,241,232,0.3);margin-bottom:0.2rem;}
+.fv-res{font-family:var(--mono);font-size:9.5px;color:var(--teal2);display:flex;align-items:center;gap:0.4rem;text-decoration:none;}
+.fv-res:hover{color:var(--teal2);text-decoration:underline;}
+.fv-res::before{content:'↓';flex-shrink:0;}
+
+/* VIDEO GRID */
+.section-title-row{display:flex;align-items:center;justify-content:space-between;padding:3rem 0 1.5rem;}
+.st-title{font-family:var(--display);font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:0.04em;color:var(--ink);}
+.st-title em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--ink3);letter-spacing:0;}
+.see-all{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink4);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s;}
+.see-all:hover{color:var(--teal);}
+
+.video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+.video-card{background:white;border:1px solid var(--bd);border-radius:12px;overflow:hidden;text-decoration:none;color:inherit;transition:all 0.3s ease;display:flex;flex-direction:column;}
+.video-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px -14px rgba(20,18,16,0.15);border-color:var(--bd2);}
+.vc-thumb{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,var(--ink2),#1A2830);overflow:hidden;cursor:pointer;}
+.vc-thumb::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 50% at 40% 50%,rgba(26,158,120,0.12) 0%,transparent 70%);}
+.vc-thumb-label{position:absolute;bottom:-6px;right:10px;font-family:var(--display);font-size:3.5rem;color:rgba(245,241,232,0.04);line-height:1;}
+.vc-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+.vc-play-btn{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.9);display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
+.video-card:hover .vc-play-btn{background:white;transform:scale(1.1);}
+.vc-play-btn svg{margin-left:3px;}
+.vc-duration{position:absolute;bottom:8px;right:8px;font-family:var(--mono);font-size:9.5px;background:rgba(0,0,0,0.75);color:white;padding:0.18rem 0.45rem;border-radius:3px;}
+.vc-series{position:absolute;top:8px;left:8px;font-family:var(--mono);font-size:8px;letter-spacing:0.08em;text-transform:uppercase;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.7);padding:0.2rem 0.5rem;border-radius:3px;backdrop-filter:blur(4px);}
+.vc-body{padding:1.25rem;flex:1;display:flex;flex-direction:column;gap:0.5rem;}
+.vc-meta{display:flex;align-items:center;gap:0.55rem;}
+.vc-pillar{font-family:var(--mono);font-size:8.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--teal);background:var(--tp);padding:0.18rem 0.5rem;border-radius:3px;}
+.vc-views{font-family:var(--mono);font-size:8.5px;color:var(--ink4);}
+.vc-title{font-family:var(--serif);font-size:0.98rem;font-weight:600;line-height:1.35;color:var(--ink);flex:1;}
+.vc-footer{display:flex;align-items:center;justify-content:space-between;padding-top:0.85rem;border-top:1px solid var(--bd);}
+.vc-date{font-family:var(--mono);font-size:8.5px;color:var(--ink4);}
+
+/* SHORT VIDEOS HORIZONTAL SCROLL */
+.shorts-section{padding:3rem 0;border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);margin:1rem 0;}
+.shorts-grid{display:flex;gap:1rem;overflow-x:auto;padding-bottom:1rem;scrollbar-width:thin;scrollbar-color:var(--bd2) transparent;}
+.shorts-grid::-webkit-scrollbar{height:4px;}
+.shorts-grid::-webkit-scrollbar-track{background:transparent;}
+.shorts-grid::-webkit-scrollbar-thumb{background:var(--bd2);border-radius:2px;}
+.short-card{flex-shrink:0;width:180px;border-radius:12px;overflow:hidden;background:white;border:1px solid var(--bd);text-decoration:none;color:inherit;transition:all 0.2s;}
+.short-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px -8px rgba(20,18,16,0.15);}
+.sc-thumb{width:180px;height:320px;background:linear-gradient(180deg,var(--ink2),#14202A);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.sc-thumb::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 40% at 50% 30%,rgba(26,158,120,0.12) 0%,transparent 60%);}
+.sc-thumb-label{font-family:var(--display);font-size:2.5rem;letter-spacing:0.04em;color:rgba(245,241,232,0.06);text-align:center;line-height:1.2;z-index:1;}
+.sc-platform{position:absolute;top:8px;left:8px;font-family:var(--mono);font-size:8px;letter-spacing:0.08em;text-transform:uppercase;background:rgba(0,0,0,0.55);color:rgba(255,255,255,0.75);padding:0.18rem 0.45rem;border-radius:3px;}
+.sc-duration{position:absolute;bottom:8px;right:8px;font-family:var(--mono);font-size:9px;background:rgba(0,0,0,0.65);color:white;padding:0.18rem 0.4rem;border-radius:3px;}
+.sc-body{padding:0.9rem;}
+.sc-title{font-family:var(--sans);font-size:0.82rem;font-weight:600;line-height:1.3;color:var(--ink);margin-bottom:0.3rem;}
+.sc-meta{font-family:var(--mono);font-size:8px;color:var(--ink4);letter-spacing:0.04em;}
+
+/* SERIES SECTION */
+.series-list{display:flex;flex-direction:column;gap:1px;background:var(--bd);border:1px solid var(--bd);border-radius:14px;overflow:hidden;}
+.series-item{background:var(--cream);padding:1.5rem;display:grid;grid-template-columns:auto 1fr auto;gap:1.25rem;align-items:center;text-decoration:none;color:inherit;transition:background 0.2s;}
+.series-item:hover{background:white;}
+.si-num{font-family:var(--display);font-size:2.5rem;letter-spacing:0.04em;color:var(--cream3);line-height:1;width:48px;text-align:center;}
+.series-item:hover .si-num{color:var(--teal2);}
+.si-body{}
+.si-title{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:0.3rem;}
+.si-meta{font-family:var(--mono);font-size:9px;color:var(--ink4);letter-spacing:0.05em;}
+.si-tag{font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);background:var(--tp);padding:0.22rem 0.55rem;border-radius:3px;align-self:center;flex-shrink:0;}
+
+@media(max-width:1024px){.featured-video{grid-template-columns:1fr;}.fv-embed{aspect-ratio:16/9;}.video-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:640px){.video-grid{grid-template-columns:1fr;}.nav-links{display:none;}.ph-row{flex-direction:column;align-items:flex-start;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="nav-name" href="ryrds-portfolio.html"><span class="dot"></span>RYAN MULIADI</a>
+    <div class="nav-links">
+      <a class="nl" href="ryrds-blog.html">Blog</a>
+      <a class="nl active" href="#">Videos</a>
+      <a class="nl" href="ryrds-projects.html">Projects</a>
+      <a class="nl" href="#">About</a>
+      <a class="nl cta" href="https://www.rd-systems.com" target="_blank">rd-systems.com ↗</a>
+    </div>
+  </div>
+</nav>
+
+<div class="z1">
+<div class="wrap">
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="ph-kicker">YouTube · TikTok · ryrds.my.id/videos</div>
+  <div class="ph-row">
+    <h1 class="ph-title">SEMUA<br/><em>Video.</em></h1>
+    <a class="yt-subscribe" href="#" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      Subscribe di YouTube
+    </a>
+  </div>
+  <div class="filter-bar">
+    <button class="filter-btn active">Semua</button>
+    <button class="filter-btn">Tutorial Series</button>
+    <button class="filter-btn">Build in Public</button>
+    <button class="filter-btn">Architecture</button>
+    <button class="filter-btn">AI & Agentic</button>
+    <button class="filter-btn">Indonesia Tech</button>
+    <button class="filter-btn">Shorts / TikTok</button>
+  </div>
+</div>
+
+<!-- FEATURED VIDEO -->
+<div class="featured-video" style="margin-top:3rem;">
+  <div class="fv-embed">
+    <div class="fv-thumb">
+      <div class="fv-thumb-label">RAG</div>
+      <div class="fv-play-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--yt)"><path d="M8 5v14l11-7z"/></svg>
+      </div>
+      <div class="fv-duration">28:42</div>
+      <div class="fv-new-badge">Terbaru</div>
+    </div>
+  </div>
+  <div class="fv-body">
+    <div class="fv-meta">
+      <span class="fv-pillar">AI & Agentic Systems</span>
+      <span class="fv-date">12 Mei 2025</span>
+    </div>
+    <h2 class="fv-title">RAG Pipeline dari Zero: PDF ke Production Q&A Bot dengan LangChain + Claude</h2>
+    <p class="fv-desc">Step-by-step membangun RAG yang benar-benar production-ready. Dari chunking strategy, embedding, vector store, sampai deployment — termasuk bagian yang biasanya skip di tutorial lain: evaluasi kualitas retrieval.</p>
+    <div class="fv-resources">
+      <div class="fv-res-label">Resources & Links</div>
+      <a class="fv-res" href="#">Source code di GitHub</a>
+      <a class="fv-res" href="#">Artikel lengkap di blog</a>
+      <a class="fv-res" href="#">Architecture diagram (Excalidraw)</a>
+    </div>
+  </div>
+</div>
+
+<!-- LATEST VIDEOS -->
+<div class="section-title-row">
+  <div class="st-title">VIDEO<br/><em>Terbaru</em></div>
+  <a class="see-all" href="#">Semua video →</a>
+</div>
+
+<div class="video-grid">
+  <a class="video-card" href="#">
+    <div class="vc-thumb">
+      <div class="vc-thumb-label">ARCH</div>
+      <div class="vc-play"><div class="vc-play-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--yt)"><path d="M8 5v14l11-7z"/></svg></div></div>
+      <div class="vc-duration">18:24</div>
+      <div class="vc-series">Tutorial #4</div>
+    </div>
+    <div class="vc-body">
+      <div class="vc-meta"><span class="vc-pillar">Architecture</span><span class="vc-views">· 1.2k views</span></div>
+      <div class="vc-title">Multi-tenant PostgreSQL: 3 Pendekatan + Demo Kode Langsung</div>
+      <div class="vc-footer"><span class="vc-date">8 Mei 2025</span></div>
+    </div>
+  </a>
+  <a class="video-card" href="#">
+    <div class="vc-thumb">
+      <div class="vc-thumb-label">NEXT</div>
+      <div class="vc-play"><div class="vc-play-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--yt)"><path d="M8 5v14l11-7z"/></svg></div></div>
+      <div class="vc-duration">12:05</div>
+    </div>
+    <div class="vc-body">
+      <div class="vc-meta"><span class="vc-pillar">Tutorial</span><span class="vc-views">· 890 views</span></div>
+      <div class="vc-title">Fix React Error #321: Debugging Zustand di Next.js 14 App Router</div>
+      <div class="vc-footer"><span class="vc-date">5 Mei 2025</span></div>
+    </div>
+  </a>
+  <a class="video-card" href="#">
+    <div class="vc-thumb">
+      <div class="vc-thumb-label">BOT</div>
+      <div class="vc-play"><div class="vc-play-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--yt)"><path d="M8 5v14l11-7z"/></svg></div></div>
+      <div class="vc-duration">22:17</div>
+      <div class="vc-series">Build in Public #6</div>
+    </div>
+    <div class="vc-body">
+      <div class="vc-meta"><span class="vc-pillar">Build in Public</span><span class="vc-views">· 2.1k views</span></div>
+      <div class="vc-title">AI Trading Bot: Circuit Breaker yang Menyelamatkan Akun Saya</div>
+      <div class="vc-footer"><span class="vc-date">1 Mei 2025</span></div>
+    </div>
+  </a>
+  <a class="video-card" href="#">
+    <div class="vc-thumb">
+      <div class="vc-thumb-label">AGENT</div>
+      <div class="vc-play"><div class="vc-play-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--yt)"><path d="M8 5v14l11-7z"/></svg></div></div>
+      <div class="vc-duration">34:50</div>
+    </div>
+    <div class="vc-body">
+      <div class="vc-meta"><span class="vc-pillar">AI & Agentic</span><span class="vc-views">· 3.4k views</span></div>
+      <div class="vc-title">LangGraph dari Nol: State Machine untuk Agentic Workflow yang Sebenarnya</div>
+      <div class="vc-footer"><span class="vc-date">25 Apr 2025</span></div>
+    </div>
+  </a>
+  <a class="video-card" href="#">
+    <div class="vc-thumb">
+      <div class="vc-thumb-label">IDN</div>
+      <div class="vc-play"><div class="vc-play-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--yt)"><path d="M8 5v14l11-7z"/></svg></div></div>
+      <div class="vc-duration">16:38</div>
+    </div>
+    <div class="vc-body">
+      <div class="vc-meta"><span class="vc-pillar">Indonesia Tech</span><span class="vc-views">· 1.8k views</span></div>
+      <div class="vc-title">Setup Midtrans di Next.js: End-to-End dengan Webhook Testing Lokal</div>
+      <div class="vc-footer"><span class="vc-date">20 Apr 2025</span></div>
+    </div>
+  </a>
+  <a class="video-card" href="#">
+    <div class="vc-thumb">
+      <div class="vc-thumb-label">MICRO</div>
+      <div class="vc-play"><div class="vc-play-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--yt)"><path d="M8 5v14l11-7z"/></svg></div></div>
+      <div class="vc-duration">28:14</div>
+      <div class="vc-series">Architecture Series #2</div>
+    </div>
+    <div class="vc-body">
+      <div class="vc-meta"><span class="vc-pillar">Architecture</span><span class="vc-views">· 2.6k views</span></div>
+      <div class="vc-title">Kenapa Microservices GiziKu Berhasil Tapi Arsitektur Klien Sebelumnya Gagal</div>
+      <div class="vc-footer"><span class="vc-date">14 Apr 2025</span></div>
+    </div>
+  </a>
+</div>
+
+<!-- SHORTS -->
+<div class="shorts-section">
+  <div class="section-title-row" style="padding-top:0;">
+    <div class="st-title">SHORTS &amp;<br/><em>TikTok</em></div>
+    <a class="see-all" href="#">Semua shorts →</a>
+  </div>
+  <div class="shorts-grid">
+    <a class="short-card" href="#">
+      <div class="sc-thumb"><div class="sc-thumb-label">RAILWAY<br/>vs<br/>VERCEL</div><div class="sc-platform">TikTok</div><div class="sc-duration">1:42</div></div>
+      <div class="sc-body"><div class="sc-title">Railway vs Vercel: Mana Lebih Murah?</div><div class="sc-meta">Indonesia Tech · 4.2k views</div></div>
+    </a>
+    <a class="short-card" href="#">
+      <div class="sc-thumb"><div class="sc-thumb-label">PRISMA<br/>vs<br/>DRIZZLE</div><div class="sc-platform">YouTube Short</div><div class="sc-duration">2:15</div></div>
+      <div class="sc-body"><div class="sc-title">Prisma vs Drizzle: Pilih yang Mana?</div><div class="sc-meta">Tutorial · 2.8k views</div></div>
+    </a>
+    <a class="short-card" href="#">
+      <div class="sc-thumb"><div class="sc-thumb-label">3 TIPS<br/>FREELANCE</div><div class="sc-platform">TikTok</div><div class="sc-duration">0:58</div></div>
+      <div class="sc-body"><div class="sc-title">3 Tips Pricing Sebagai Independent Consultant</div><div class="sc-meta">Consultant · 6.1k views</div></div>
+    </a>
+    <a class="short-card" href="#">
+      <div class="sc-thumb"><div class="sc-thumb-label">RAG<br/>IN<br/>5 MIN</div><div class="sc-platform">YouTube Short</div><div class="sc-duration">4:30</div></div>
+      <div class="sc-body"><div class="sc-title">RAG Explained dalam 5 Menit</div><div class="sc-meta">AI & Agentic · 5.3k views</div></div>
+    </a>
+    <a class="short-card" href="#">
+      <div class="sc-thumb"><div class="sc-thumb-label">N8N<br/>WORKFLOW</div><div class="sc-platform">TikTok</div><div class="sc-duration">2:02</div></div>
+      <div class="sc-body"><div class="sc-title">Bikin Automation dengan n8n dalam 2 Menit</div><div class="sc-meta">AI & Agentic · 7.4k views</div></div>
+    </a>
+    <a class="short-card" href="#">
+      <div class="sc-thumb"><div class="sc-thumb-label">DOCKER<br/>QUICK</div><div class="sc-platform">YouTube Short</div><div class="sc-duration">3:12</div></div>
+      <div class="sc-body"><div class="sc-title">Docker Compose untuk Dev Environment</div><div class="sc-meta">Tutorial · 3.1k views</div></div>
+    </a>
+  </div>
+</div>
+
+<!-- SERIES -->
+<div class="section-title-row">
+  <div class="st-title">VIDEO<br/><em>Series</em></div>
+</div>
+<div class="series-list">
+  <a class="series-item" href="#">
+    <div class="si-num">01</div>
+    <div class="si-body">
+      <div class="si-title">Build in Public: AI Trading Bot dari Nol</div>
+      <div class="si-meta">8 episode · Ongoing · TypeScript + Alpaca + Telegram HITL</div>
+    </div>
+    <span class="si-tag">Ongoing</span>
+  </a>
+  <a class="series-item" href="#">
+    <div class="si-num">02</div>
+    <div class="si-body">
+      <div class="si-title">Architecture Series: Pola yang Bekerja di Production</div>
+      <div class="si-meta">5 episode · Ongoing · Multi-tenant, event-driven, API gateway</div>
+    </div>
+    <span class="si-tag">Ongoing</span>
+  </a>
+  <a class="series-item" href="#">
+    <div class="si-num">03</div>
+    <div class="si-body">
+      <div class="si-title">LangChain + LangGraph: Dari Dasar ke Production Agentic</div>
+      <div class="si-meta">6 episode · Complete · RAG, agents, state management, deployment</div>
+    </div>
+    <span class="si-tag" style="background:var(--gp);color:var(--gold);border-color:rgba(184,146,10,0.3);">Complete</span>
+  </a>
+  <a class="series-item" href="#">
+    <div class="si-num">04</div>
+    <div class="si-body">
+      <div class="si-title">Indonesia Tech Stack: Integrasi yang Tidak Ada di Dokumentasi</div>
+      <div class="si-meta">4 episode · Ongoing · Midtrans, Fonnte, WhatsApp Business API, BPJS</div>
+    </div>
+    <span class="si-tag">Ongoing</span>
+  </a>
+</div>
+
+</div><!-- end wrap -->
+</div><!-- end z1 -->
+
+<script>
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
