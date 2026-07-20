@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Training modules dari Ryan Muliadi — belajar cloud architecture, AI integration, full stack development, dan cara membangun karier sebagai independent consultant di Indonesia."/>
+<meta name="keywords" content="training digital systems Indonesia, belajar cloud architecture, AI integration course, independent consultant Indonesia, Ryan Muliadi training"/>
+<meta name="author" content="Ryan Muliadi"/>
+<link rel="canonical" href="https://ryrds.my.id/training/"/>
+<title>Training — Ryan Muliadi | Belajar Digital Systems & Independent Consulting</title>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://ryrds.my.id/training/"/>
+<meta property="og:title" content="Training — Ryan Muliadi"/>
+<meta property="og:description" content="Modul training cloud architecture, AI integration, full stack, dan independent consulting dari Jakarta."/>
+<meta property="og:image" content="https://ryrds.my.id/og-image.png"/>
+<meta property="og:site_name" content="Ryan Muliadi"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --cream:#F5F1E8;--cream2:#EDE8DC;--cream3:#E4DDD0;
+  --ink:#141210;--ink2:#2C2820;--ink3:#5A5248;--ink4:#8A8278;
+  --bd:rgba(20,18,16,0.1);--bd2:rgba(20,18,16,0.18);
+  --teal:#1A9E78;--teal2:#22C492;--tp:rgba(26,158,120,0.08);
+  --gold:#B8920A;--gold2:#D4AA20;--gp:rgba(184,146,10,0.1);
+  --display:'Bebas Neue',sans-serif;--serif:'Lora',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;--mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.018;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");}
+.z1{position:relative;z-index:1;}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(245,241,232,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--bd);}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 5vw;height:60px;display:flex;align-items:center;justify-content:space-between;}
+.nav-name{font-family:var(--display);font-size:1.35rem;letter-spacing:0.06em;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:0.5rem;}
+.nav-name .dot{width:7px;height:7px;border-radius:50%;background:var(--teal);}
+.nav-links{display:flex;align-items:center;gap:0.2rem;}
+.nl{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding:0.45rem 0.85rem;color:var(--ink4);text-decoration:none;border-radius:5px;transition:all 0.2s;}
+.nl:hover{color:var(--ink);background:var(--bd);}
+.nl.active{color:var(--teal);background:var(--tp);}
+.nl.cta{background:var(--ink);color:var(--cream);margin-left:0.4rem;}
+
+.wrap{max-width:1280px;margin:0 auto;padding:0 5vw;}
+
+/* HERO */
+.page-hero{padding:4rem 0 3rem;border-bottom:1px solid var(--bd);}
+.ph-kicker{font-family:var(--mono);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--teal);display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;}
+.ph-kicker::before{content:'';width:22px;height:1px;background:var(--teal);}
+.ph-grid{display:grid;grid-template-columns:1fr 380px;gap:3rem;align-items:center;}
+.ph-title{font-family:var(--display);font-size:clamp(3rem,8vw,6.5rem);letter-spacing:0.04em;line-height:0.9;color:var(--ink);margin-bottom:1.25rem;}
+.ph-title em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--ink3);letter-spacing:0;}
+.ph-sub{font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--ink3);line-height:1.75;max-width:54ch;margin-bottom:1.75rem;}
+.ph-note{font-family:var(--mono);font-size:9.5px;letter-spacing:0.08em;color:var(--ink4);padding:0.65rem 1rem;background:var(--gp);border:1px solid rgba(184,146,10,0.2);border-radius:6px;display:inline-flex;align-items:center;gap:0.55rem;}
+.ph-note::before{content:'★';color:var(--gold);}
+
+/* AUDIENCE CARDS */
+.audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding:3rem 0;border-bottom:1px solid var(--bd);}
+.aud-card{background:white;border:1px solid var(--bd);border-radius:12px;padding:1.5rem;}
+.aud-icon{font-size:1.75rem;margin-bottom:0.85rem;}
+.aud-title{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--ink);margin-bottom:0.35rem;}
+.aud-desc{font-size:0.83rem;color:var(--ink3);line-height:1.7;}
+
+/* TRACK SECTION */
+section.track-section{padding:4rem 0;border-bottom:1px solid var(--bd);}
+.sec-kicker{font-family:var(--mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);display:flex;align-items:center;gap:0.65rem;margin-bottom:0.65rem;}
+.sec-kicker::before{content:'';width:14px;height:1px;background:var(--teal);}
+.sec-title{font-family:var(--display);font-size:clamp(2rem,5vw,3.2rem);letter-spacing:0.04em;line-height:0.95;color:var(--ink);margin-bottom:0.5rem;}
+.sec-title em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--ink3);letter-spacing:0;}
+.sec-sub{font-size:0.88rem;color:var(--ink3);line-height:1.75;max-width:62ch;margin-bottom:2.5rem;}
+
+/* TRACK GRID */
+.track-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+.track-card{background:white;border:1px solid var(--bd);border-radius:14px;overflow:hidden;transition:all 0.3s ease;display:flex;flex-direction:column;}
+.track-card:hover{transform:translateY(-3px);box-shadow:0 16px 32px -12px rgba(20,18,16,0.14);border-color:var(--bd2);}
+.tc-header{padding:1.5rem 1.5rem 1.25rem;position:relative;}
+.tc-num{font-family:var(--display);font-size:3rem;letter-spacing:0.04em;color:var(--cream3);line-height:1;margin-bottom:0.4rem;}
+.track-card:hover .tc-num{color:var(--teal2);}
+.tc-tag{font-family:var(--mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);background:var(--tp);padding:0.2rem 0.55rem;border-radius:3px;display:inline-block;margin-bottom:0.65rem;}
+.tc-title{font-family:var(--serif);font-size:1.05rem;font-weight:600;line-height:1.3;color:var(--ink);}
+.tc-body{padding:0 1.5rem 1.5rem;flex:1;display:flex;flex-direction:column;}
+.tc-desc{font-size:0.82rem;color:var(--ink3);line-height:1.72;margin-bottom:1rem;flex:1;}
+.tc-modules{display:flex;flex-direction:column;gap:0.35rem;padding-top:1rem;border-top:1px solid var(--bd);}
+.tc-mod{font-family:var(--mono);font-size:9px;color:var(--ink4);display:flex;align-items:flex-start;gap:0.4rem;line-height:1.45;letter-spacing:0.02em;}
+.tc-mod::before{content:'→';color:var(--teal);flex-shrink:0;}
+.tc-status{font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;padding:0.22rem 0.6rem;border-radius:3px;align-self:flex-start;margin-top:1rem;}
+.tc-status.coming{background:var(--gp);color:var(--gold);border:1px solid rgba(184,146,10,0.25);}
+.tc-status.available{background:var(--tp);color:var(--teal);border:1px solid rgba(26,158,120,0.25);}
+
+/* CONSULTING TRACK — secondary */
+.consulting-section{padding:4rem 0;border-bottom:1px solid var(--bd);background:var(--ink);}
+.consulting-section .sec-kicker::before{background:var(--teal2);}
+.consulting-section .sec-kicker{color:var(--teal2);}
+.consulting-section .sec-title{color:var(--cream);}
+.consulting-section .sec-sub{color:rgba(245,241,232,0.55);}
+.ct-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
+.ct-card{background:rgba(245,241,232,0.05);border:1px solid rgba(245,241,232,0.1);border-radius:12px;padding:1.35rem;transition:all 0.2s;}
+.ct-card:hover{background:rgba(245,241,232,0.08);border-color:rgba(45,219,166,0.25);}
+.ct-icon{font-size:1.4rem;margin-bottom:0.75rem;}
+.ct-title{font-family:var(--serif);font-size:0.98rem;font-weight:600;color:var(--cream);margin-bottom:0.35rem;line-height:1.3;}
+.ct-desc{font-size:0.8rem;color:rgba(245,241,232,0.5);line-height:1.65;}
+.ct-label{font-family:var(--mono);font-size:8.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-top:0.75rem;}
+
+/* FORMAT SECTION */
+.format-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bd);border:1px solid var(--bd);border-radius:14px;overflow:hidden;margin-top:2rem;}
+.format-card{background:var(--cream);padding:1.75rem;transition:background 0.2s;}
+.format-card:hover{background:white;}
+.fc-icon{font-size:1.5rem;margin-bottom:0.75rem;}
+.fc-title{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:0.4rem;}
+.fc-desc{font-size:0.82rem;color:var(--ink3);line-height:1.7;}
+.fc-platform{font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);margin-top:0.65rem;}
+
+/* CTA */
+.training-cta{background:linear-gradient(135deg,var(--cream2),var(--cream3));border:1px solid var(--bd);border-radius:16px;padding:3rem;text-align:center;margin:4rem 0;}
+.tc-title-big{font-family:var(--display);font-size:clamp(2rem,5vw,3.5rem);letter-spacing:0.04em;color:var(--ink);margin-bottom:0.75rem;line-height:1;}
+.tc-title-big em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--teal);}
+.tc-cta-sub{font-size:0.92rem;color:var(--ink3);line-height:1.75;max-width:52ch;margin:0 auto 2rem;}
+.tc-btn-row{display:flex;gap:0.85rem;justify-content:center;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 1.5rem;font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;border-radius:5px;transition:all 0.22s;}
+.btn-primary{background:var(--ink);color:var(--cream);}
+.btn-primary:hover{background:var(--ink2);transform:translateY(-2px);}
+.btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--bd2);}
+.btn-outline:hover{border-color:var(--ink);}
+
+@media(max-width:1024px){.ph-grid{grid-template-columns:1fr;}.track-grid{grid-template-columns:1fr 1fr;}.ct-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:640px){.track-grid{grid-template-columns:1fr;}.audience-grid{grid-template-columns:1fr;}.format-grid{grid-template-columns:1fr;}.ct-grid{grid-template-columns:1fr;}.nav-links{display:none;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-name" href="/"><span class="dot"></span>RYAN MULIADI</a>
+    <div class="nav-links">
+      <a class="nl" href="/blog/">Blog</a>
+      <a class="nl" href="/videos/">Videos</a>
+      <a class="nl" href="/projects/">Projects</a>
+      <a class="nl active" href="/training/">Training</a>
+      <a class="nl" href="/about/">About</a>
+      <a class="nl cta" href="https://www.rd-systems.com" target="_blank">rd-systems.com ↗</a>
+    </div>
+  </div>
+</nav>
+
+<div class="z1">
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="wrap">
+    <div class="ph-kicker">ryrds.my.id / training · Learning Hub</div>
+    <div class="ph-grid">
+      <div>
+        <h1 class="ph-title">BELAJAR<br/>DIGITAL<br/><em>Systems.</em></h1>
+        <p class="ph-sub">Modul training dari proyek nyata — bukan tutorial hello world. Dari cloud architecture, AI integration, hingga cara membangun karier sebagai independent consultant di Indonesia.</p>
+        <span class="ph-note">Konten training sedang dalam pengembangan — subscribe untuk notifikasi launch</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1rem;">
+        <div style="background:white;border:1px solid var(--bd);border-radius:12px;padding:1.5rem;">
+          <div style="font-family:var(--mono);font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink4);margin-bottom:1rem;">Track Overview</div>
+          <div style="display:flex;flex-direction:column;gap:0.55rem;">
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.84rem;">
+              <span style="color:var(--ink);">A · Full Stack Web Dev</span>
+              <span style="font-family:var(--mono);font-size:9px;color:var(--teal);background:var(--tp);padding:0.18rem 0.5rem;border-radius:3px;">Coming Soon</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.84rem;">
+              <span style="color:var(--ink);">B · Cloud Architecture</span>
+              <span style="font-family:var(--mono);font-size:9px;color:var(--teal);background:var(--tp);padding:0.18rem 0.5rem;border-radius:3px;">Coming Soon</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.84rem;">
+              <span style="color:var(--ink);">C · AI &amp; Agentic Systems</span>
+              <span style="font-family:var(--mono);font-size:9px;color:var(--teal);background:var(--tp);padding:0.18rem 0.5rem;border-radius:3px;">Coming Soon</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.84rem;">
+              <span style="color:var(--ink);">D · Data Engineering</span>
+              <span style="font-family:var(--mono);font-size:9px;color:var(--gold);background:var(--gp);padding:0.18rem 0.5rem;border-radius:3px;">Roadmap</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.84rem;">
+              <span style="color:var(--ink);">E · CRM / ERP Systems</span>
+              <span style="font-family:var(--mono);font-size:9px;color:var(--gold);background:var(--gp);padding:0.18rem 0.5rem;border-radius:3px;">Roadmap</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.84rem;">
+              <span style="color:var(--ink);">★ Independent Consulting</span>
+              <span style="font-family:var(--mono);font-size:9px;color:var(--gold);background:var(--gp);padding:0.18rem 0.5rem;border-radius:3px;">Secondary</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TARGET AUDIENCE -->
+<div class="wrap">
+  <div style="padding:3rem 0 0;">
+    <div class="sec-kicker">Untuk Siapa</div>
+    <h2 class="sec-title">Tiga <em>Audience</em></h2>
+  </div>
+  <div class="audience-grid" style="padding-top:1.5rem;">
+    <div class="aud-card">
+      <div class="aud-icon">👨‍💻</div>
+      <h3 class="aud-title">Developer yang Ingin Level-Up</h3>
+      <p class="aud-desc">Sudah bisa coding tapi ingin berpikir seperti arsitek. Belajar dari proyek production nyata, bukan tutorial yang hanya bekerja di localhost. Target: dari junior ke mid-senior dalam 6–12 bulan.</p>
+    </div>
+    <div class="aud-card">
+      <div class="aud-icon">🏢</div>
+      <h3 class="aud-title">Tim Teknis di Perusahaan</h3>
+      <p class="aud-desc">Developer atau IT team di corporate, UKM, atau institusi yang ingin adopt cloud, AI, atau modernisasi sistem tanpa harus hire konsultan mahal untuk setiap keputusan teknis.</p>
+    </div>
+    <div class="aud-card">
+      <div class="aud-icon">🚀</div>
+      <h3 class="aud-title">Calon Independent Consultant</h3>
+      <p class="aud-desc">Professional yang ingin transisi dari karyawan ke independent consultant — belajar cara pricing, scope proyek, membangun reputasi, dan mendapatkan klien pertama tanpa network besar.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CORE TRACKS -->
+<section class="track-section">
+  <div class="wrap">
+    <div class="sec-kicker">Primary Tracks</div>
+    <h2 class="sec-title">Core Learning <em>Tracks</em></h2>
+    <p class="sec-sub">Lima track utama yang mencakup skill paling relevan untuk digital systems architect — dari development hingga deployment, dari data hingga AI.</p>
+
+    <div class="track-grid">
+
+      <div class="track-card">
+        <div class="tc-header">
+          <div class="tc-num">A</div>
+          <div class="tc-tag">Foundation</div>
+          <h3 class="tc-title">Full Stack Web Development</h3>
+        </div>
+        <div class="tc-body">
+          <p class="tc-desc">Next.js, TypeScript, Node.js, PostgreSQL, dan deployment. Dibangun dari proyek ConstructPro dan GiziKu — arsitektur yang sudah proven di production Indonesia.</p>
+          <div class="tc-modules">
+            <div class="tc-mod">Next.js 14 App Router + TypeScript dari nol</div>
+            <div class="tc-mod">API design: REST vs GraphQL untuk SaaS Indonesia</div>
+            <div class="tc-mod">Multi-tenant database: RLS PostgreSQL vs schema isolation</div>
+            <div class="tc-mod">Payment gateway: Midtrans Snap integration lengkap</div>
+            <div class="tc-mod">Deploy ke Railway + Vercel dengan CI/CD</div>
+          </div>
+          <span class="tc-status coming">Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="track-card">
+        <div class="tc-header">
+          <div class="tc-num">B</div>
+          <div class="tc-tag">Infrastructure</div>
+          <h3 class="tc-title">Cloud Architecture</h3>
+        </div>
+        <div class="tc-body">
+          <p class="tc-desc">Dari monolith ke microservices, cloud native di AWS/GCP, hybrid setup, dan on-premise deployment untuk enterprise dengan kebutuhan data sovereignty.</p>
+          <div class="tc-modules">
+            <div class="tc-mod">Conway's Law: kenapa arsitektur ikuti struktur tim</div>
+            <div class="tc-mod">Microservices: kapan ya, kapan tidak perlu</div>
+            <div class="tc-mod">Cloud native vs hybrid vs on-premise: decision framework</div>
+            <div class="tc-mod">Cloudflare Workers sebagai edge API gateway</div>
+            <div class="tc-mod">Cost optimization: AWS vs GCP untuk startup Indonesia</div>
+          </div>
+          <span class="tc-status coming">Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="track-card">
+        <div class="tc-header">
+          <div class="tc-num">C</div>
+          <div class="tc-tag">AI & Automation</div>
+          <h3 class="tc-title">AI Automation &amp; Agentic Systems</h3>
+        </div>
+        <div class="tc-body">
+          <p class="tc-desc">LLM integration, RAG pipeline, LangChain/LangGraph, dan agentic workflow untuk otomasi proses bisnis nyata — termasuk contact center AI dan document processing.</p>
+          <div class="tc-modules">
+            <div class="tc-mod">RAG dari nol: chunking, embedding, vector store</div>
+            <div class="tc-mod">LangGraph state management untuk agentic workflow</div>
+            <div class="tc-mod">WhatsApp AI bot: triage otomatis dengan LLM</div>
+            <div class="tc-mod">Computer vision untuk document &amp; damage analysis</div>
+            <div class="tc-mod">Evaluasi kualitas RAG: precision, recall, faithfulness</div>
+          </div>
+          <span class="tc-status coming">Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="track-card">
+        <div class="tc-header">
+          <div class="tc-num">D</div>
+          <div class="tc-tag">Data</div>
+          <h3 class="tc-title">Data Engineering &amp; Analytics</h3>
+        </div>
+        <div class="tc-body">
+          <p class="tc-desc">Pipeline data yang reliable, warehousing modern, ETL/ELT, dan dashboard yang benar-benar dipakai untuk keputusan bisnis — bukan dashboard yang cuma cantik.</p>
+          <div class="tc-modules">
+            <div class="tc-mod">ETL vs ELT: pilih mana untuk data Indonesia</div>
+            <div class="tc-mod">Airflow untuk orchestration pipeline production</div>
+            <div class="tc-mod">dbt untuk data transformation yang maintainable</div>
+            <div class="tc-mod">Metabase + Superset: BI tanpa biaya Tableau</div>
+            <div class="tc-mod">Data governance untuk perusahaan yang comply PDPA</div>
+          </div>
+          <span class="tc-status coming">Roadmap</span>
+        </div>
+      </div>
+
+      <div class="track-card">
+        <div class="tc-header">
+          <div class="tc-num">E</div>
+          <div class="tc-tag">Enterprise Systems</div>
+          <h3 class="tc-title">CRM / ERP Implementation</h3>
+        </div>
+        <div class="tc-body">
+          <p class="tc-desc">Implementasi Odoo, SuiteCRM, ERPNext untuk berbagai skala bisnis — dari UKM yang pertama kali adopt ERP hingga enterprise yang migrasi dari SAP legacy.</p>
+          <div class="tc-modules">
+            <div class="tc-mod">Odoo Community vs Enterprise: kapan perlu upgrade</div>
+            <div class="tc-mod">Kustomisasi CRM untuk sales cycle Indonesia</div>
+            <div class="tc-mod">Integrasi ERP ke marketplace (Tokopedia, Shopee)</div>
+            <div class="tc-mod">HRIS: payroll BPJS &amp; PPh 21 di OrangeHRM</div>
+            <div class="tc-mod">Data migration dari Excel ke ERP tanpa chaos</div>
+          </div>
+          <span class="tc-status coming">Roadmap</span>
+        </div>
+      </div>
+
+      <div class="track-card" style="background:linear-gradient(135deg,var(--cream2),white);">
+        <div class="tc-header">
+          <div class="tc-num" style="color:var(--cream3);">F</div>
+          <div class="tc-tag" style="color:var(--gold);background:var(--gp);">Security</div>
+          <h3 class="tc-title">Security &amp; Compliance</h3>
+        </div>
+        <div class="tc-body">
+          <p class="tc-desc">Keamanan aplikasi, compliance PDPA Indonesia, dan praktik security yang realistis untuk tim kecil — tanpa perlu security budget enterprise.</p>
+          <div class="tc-modules">
+            <div class="tc-mod">OWASP Top 10 dengan contoh kode nyata</div>
+            <div class="tc-mod">PDPA Indonesia: apa yang perlu dilakukan sekarang</div>
+            <div class="tc-mod">Secrets management: jangan simpan di .env saja</div>
+            <div class="tc-mod">Penetration testing dasar untuk aplikasi web</div>
+          </div>
+          <span class="tc-status coming">Roadmap</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONSULTING TRACK — secondary -->
+<section class="consulting-section">
+  <div class="wrap">
+    <div class="sec-kicker">Secondary Track · ★ Bonus</div>
+    <h2 class="sec-title" style="color:var(--cream);">Independent <em style="color:var(--teal2);">Consulting</em></h2>
+    <p class="sec-sub">Bukan primary track, tapi sering jadi yang paling dicari. Cara membangun karier sebagai independent consultant di Indonesia — dari nol sampai klien enterprise pertama.</p>
+
+    <div class="ct-grid">
+      <div class="ct-card">
+        <div class="ct-icon">💼</div>
+        <h3 class="ct-title">Positioning &amp; Personal Brand</h3>
+        <p class="ct-desc">Cara memposisikan diri sebagai spesialis, bukan generalis. LinkedIn, portfolio, dan cara klien menemukan kamu organically.</p>
+        <div class="ct-label">Module 1</div>
+      </div>
+      <div class="ct-card">
+        <div class="ct-icon">💰</div>
+        <h3 class="ct-title">Pricing &amp; Proposal</h3>
+        <p class="ct-desc">Kenapa tidak pakai hourly rate. Value-based pricing untuk consultant Indonesia, cara menulis proposal yang convert, dan struktur termin pembayaran.</p>
+        <div class="ct-label">Module 2</div>
+      </div>
+      <div class="ct-card">
+        <div class="ct-icon">📋</div>
+        <h3 class="ct-title">Scoping &amp; Contracting</h3>
+        <p class="ct-desc">Cara scope proyek supaya tidak kebanjiran scope creep. Template MOU, NDA, SPK, dan invoice yang bisa langsung dipakai.</p>
+        <div class="ct-label">Module 3</div>
+      </div>
+      <div class="ct-card">
+        <div class="ct-icon">🎯</div>
+        <h3 class="ct-title">Getting Clients</h3>
+        <p class="ct-desc">Inbound vs outbound untuk consultant Indonesia. Cara konversi LinkedIn connection ke discovery call, dan red flags klien yang perlu dihindari.</p>
+        <div class="ct-label">Module 4</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEARNING FORMATS -->
+<section style="padding:4rem 0;border-bottom:1px solid var(--bd);">
+  <div class="wrap">
+    <div class="sec-kicker">Format Pembelajaran</div>
+    <h2 class="sec-title">Cara <em>Belajarnya</em></h2>
+    <p class="sec-sub">Semua konten tersedia gratis di YouTube dan blog — untuk yang ingin struktur lebih terorganisir, tersedia dalam format tambahan.</p>
+
+    <div class="format-grid">
+      <div class="format-card">
+        <div class="fc-icon">📹</div>
+        <h3 class="fc-title">YouTube Tutorial Series</h3>
+        <p class="fc-desc">Video panjang step-by-step dengan demo kode langsung. Setiap video membahas satu topik spesifik tuntas — dari setup hingga deployment. Gratis.</p>
+        <div class="fc-platform">YouTube @Rdi8164</div>
+      </div>
+      <div class="format-card">
+        <div class="fc-icon">✍️</div>
+        <h3 class="fc-title">Blog Articles &amp; Deep Dives</h3>
+        <p class="fc-desc">Artikel teknis dengan penjelasan mendalam, diagram arsitektur, dan kode yang bisa langsung dicopy. Cocok untuk yang prefer baca daripada nonton. Gratis.</p>
+        <div class="fc-platform">ryrds.my.id/blog</div>
+      </div>
+      <div class="format-card">
+        <div class="fc-icon">⚡</div>
+        <h3 class="fc-title">Short Tips &amp; Quick Wins</h3>
+        <p class="fc-desc">Konten 1–3 menit untuk satu insight spesifik — debugging tip, tool comparison, atau framework decision. Cocok untuk dikonsumsi di waktu senggang. Gratis.</p>
+        <div class="fc-platform">TikTok · YouTube Shorts</div>
+      </div>
+      <div class="format-card">
+        <div class="fc-icon">📚</div>
+        <h3 class="fc-title">Structured Course (Coming)</h3>
+        <p class="fc-desc">Kurikulum terstruktur per track dengan project assignments, quiz, dan sertifikat completion. Konten yang sama dengan YouTube tapi dalam format yang lebih terarah.</p>
+        <div class="fc-platform" style="color:var(--gold);">ryrds.my.id · Berbayar</div>
+      </div>
+      <div class="format-card">
+        <div class="fc-icon">🗣️</div>
+        <h3 class="fc-title">1:1 Mentoring Session</h3>
+        <p class="fc-desc">Sesi langsung 60 menit untuk review code, diskusi arsitektur, atau career guidance. Tersedia untuk developer dan calon consultant. Booking via Calendly.</p>
+        <div class="fc-platform" style="color:var(--gold);">Berbayar · Booking Soon</div>
+      </div>
+      <div class="format-card">
+        <div class="fc-icon">💬</div>
+        <h3 class="fc-title">Community Discord</h3>
+        <p class="fc-desc">Tempat diskusi, tanya jawab, dan peer learning. Share proyek, minta feedback arsitektur, atau cari partner project. Ryan aktif menjawab setiap hari.</p>
+        <div class="fc-platform" style="color:var(--gold);">Coming Soon</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="wrap">
+  <div class="training-cta">
+    <h2 class="tc-title-big">MULAI DARI<br/><em>Mana Dulu?</em></h2>
+    <p class="tc-cta-sub">Subscribe ke newsletter untuk dapat notifikasi saat konten training pertama launch. Atau langsung mulai dengan blog dan video yang sudah tersedia.</p>
+    <div class="tc-btn-row">
+      <a class="btn btn-primary" href="/blog/">Mulai dari Blog →</a>
+      <a class="btn btn-outline" href="https://www.youtube.com/@Rdi8164" target="_blank">YouTube Channel ↗</a>
+      <a class="btn btn-outline" href="/">Kembali ke Homepage</a>
+    </div>
+  </div>
+</div>
+
+</div><!-- end z1 -->
+</body>
+</html>
